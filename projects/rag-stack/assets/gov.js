@@ -112,7 +112,7 @@
       context: [
         { topic: "retrieval", text: "Retrieval augments generation with relevant documents; governed retrieval adds permission filtering before indexing." },
         { topic: "evidence", text: "Answers must cite document IDs and sections; low-confidence cases are escalated rather than inferred." },
-        { topic: "runtime", text: "A local runtime can execute the chain on CPU with no external endpoint." }
+        { topic: "runtime", text: "An on-premise runtime can execute the chain on CPU with no external endpoint." }
       ],
       guard: { label: "SAFE", cls: "safe", detail: "No domain rule violated. Categories: None." },
       trace: [["classify", 2], ["retrieve", 41], ["guard", 88], ["generate", 312], ["trace.flush", 14]]
