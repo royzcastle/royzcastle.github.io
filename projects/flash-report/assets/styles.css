@@ -111,6 +111,12 @@ button { cursor: pointer; }
 .icon-btn.is-spin svg { animation: spin .7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+.notice-strip {
+  margin: 0; padding: 8px clamp(16px, 3vw, 36px);
+  background: #eef2ff; border-bottom: 1px solid #dde4ff;
+  font-size: 11px; color: #3730a3;
+}
+
 .avatar {
   width: 34px; height: 34px; border-radius: 50%;
   display: grid; place-items: center;
@@ -421,12 +427,17 @@ button { cursor: pointer; }
 
 /* ---------- 頁尾 ---------- */
 .footer {
-  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
   padding: 16px clamp(16px, 3vw, 36px) 22px;
   font-size: 10.5px; color: var(--faint);
   border-top: 1px solid var(--line);
   background: #fafbfe;
 }
+.footer-main { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.scope-notice {
+  margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--line);
+  font-size: 10px; line-height: 1.7; color: #94a3b8;
+}
+.scope-notice strong { color: #64748b; }
 
 /* ---------- 響應式 ---------- */
 @media (max-width: 1180px) {

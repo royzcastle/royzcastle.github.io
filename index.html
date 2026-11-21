@@ -15,8 +15,13 @@
         <a class="handle" href="https://github.com/royzcastle" target="_blank" rel="noopener">
           <span class="dot"></span> royzcastle
         </a>
-        <a class="nav-link" href="projects/flash-report/index.html">Live demo ↗</a>
+        <a class="nav-link" href="projects/flash-report/index.html">Flash Report ↗</a>
+        <a class="nav-link" href="projects/rag-stack/index.html">RAG stack ↗</a>
       </nav>
+
+      <p class="notice-strip">
+        Reference architectures and governance frameworks using anonymized / synthetic examples for illustrative purposes.
+      </p>
 
       <div class="hero-inner">
         <div class="hero-copy">
@@ -36,6 +41,9 @@
             <span>English UI</span>
             <span>·</span>
             <span>Mobile-ready</span>
+          </div>
+          <div class="secondary-link">
+            <a href="projects/rag-stack/index.html">Also: RAG full-stack PoC — UI → RAG → SFT guardrail → Langfuse ↗</a>
           </div>
         </div>
 
@@ -79,9 +87,35 @@
         </div>
       </section>
 
+      <section class="section">
+        <div class="section-head">
+          <span class="kicker">02 / ANOTHER PROJECT</span>
+          <h2>RAG full stack, observed end to end</h2>
+          <p>Local PoCs covering the whole chain — Streamlit review UI, LangGraph routing, pgvector retrieval, CPU-only SFT safety guardrail, and Langfuse tracing with a no-Docker fallback.</p>
+        </div>
+        <div class="project-card">
+          <div class="project-shot">
+            <img src="projects/rag-stack/preview.png" alt="RAG full stack showcase preview" />
+          </div>
+          <div class="project-copy">
+            <h3>From a question box to an observed answer</h3>
+            <p>
+              A sanitized, interactive showcase of the real local experiments. No source files, datasets,
+              traces, model weights, endpoints or credentials are published — only the architecture,
+              engineering decisions and a simulated trace runner.
+            </p>
+            <div class="tag-row">
+              <span>Streamlit</span><span>LangGraph</span><span>pgvector</span>
+              <span>Neo4j</span><span>Qwen3Guard LoRA</span><span>Langfuse</span>
+            </div>
+            <a class="btn primary" href="projects/rag-stack/index.html">Open RAG showcase <span>→</span></a>
+          </div>
+        </div>
+      </section>
+
       <section class="section band">
         <div class="section-head">
-          <span class="kicker">02 / BUILT FOR TEAMS</span>
+          <span class="kicker">03 / BUILT FOR TEAMS</span>
           <h2>Ships as a tab, plus a daily card</h2>
         </div>
         <div class="split">
@@ -106,7 +140,7 @@ FlashData.askAI()           <span class="c">→ LLM + RAG</span></code></pre>
 
       <section class="section">
         <div class="section-head">
-          <span class="kicker">03 / TRY IT</span>
+          <span class="kicker">04 / TRY IT</span>
           <h2>Open the report</h2>
           <p>It runs entirely in the browser. Ask it “Why did GGR grow?” or hit Regenerate.</p>
         </div>
@@ -118,11 +152,23 @@ FlashData.askAI()           <span class="c">→ LLM + RAG</span></code></pre>
     </main>
 
     <footer class="footer">
-      <div>
-        <strong>royzcastle</strong>
-        <span> · AI Flash Report POC · Starlight Macau Integrated Resort (fictional demo brand)</span>
+      <div class="footer-main">
+        <div>
+          <strong>royzcastle</strong>
+          <span> · Selected work · fictional demo brands and synthetic data only</span>
+        </div>
+        <a href="https://github.com/royzcastle" target="_blank" rel="noopener">github.com/royzcastle ↗</a>
       </div>
-      <a href="https://github.com/royzcastle" target="_blank" rel="noopener">github.com/royzcastle ↗</a>
+      <div class="scope-notice">
+        <strong>Confidentiality &amp; Scope Notice:</strong>
+        All architectures, governance frameworks, workflows, and use-case examples presented on this site are
+        <strong>conceptualized reference models</strong> developed to illustrate enterprise AI portfolio management,
+        solution design, and governance practices. No proprietary system designs, source code, internal documentation,
+        or confidential information belonging to any current or former employer are disclosed. All metrics,
+        visualizations, and sample outputs use <strong>synthetic or illustrative data</strong> for demonstration purposes
+        only. Views expressed here are solely my own and do not represent the positions or endorsements of any employer,
+        nor do they constitute financial, investment, or legal advice.
+      </div>
     </footer>
   </div>
 </body>
