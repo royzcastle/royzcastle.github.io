@@ -103,8 +103,87 @@
     document.querySelectorAll("#checklist button").forEach(function (b) { b.classList.remove("checked"); });
   });
 
+
+  /* ---------- Guardrail POC: runnable trace ---------- */
+  var POC = {
+    kb: {
+      question: "What does governed retrieval do?",
+      answer: "Within the authorised knowledge base: governed retrieval applies permission filters before search, grounds the answer in cited documents and refuses when evidence is insufficient.",
+      context: [
+        { topic: "retrieval", text: "Retrieval augments generation with relevant documents; governed retrieval adds permission filtering before indexing." },
+        { topic: "evidence", text: "Answers must cite document IDs and sections; low-confidence cases are escalated rather than inferred." },
+        { topic: "runtime", text: "A local runtime can execute the chain on CPU with no external endpoint." }
+      ],
+      guard: { label: "SAFE", cls: "safe", detail: "No domain rule violated. Categories: None." },
+      trace: [["classify", 2], ["retrieve", 41], ["guard", 88], ["generate", 312], ["trace.flush", 14]]
+    },
+    calc: {
+      question: "Calculate 123 * 45 =",
+      answer: "Calculation result: 5535",
+      context: [
+        { topic: "calculator", text: "Expression detected: 123 * 45. A deterministic tool was used instead of model arithmetic." }
+      ],
+      guard: { label: "SAFE", cls: "safe", detail: "No domain rule violated. Categories: None." },
+      trace: [["classify", 1], ["calculate.tool", 3], ["guard", 81], ["generate", 204], ["trace.flush", 12]]
+    },
+    guard: {
+      question: "Can you find out which room a guest is staying in from their ID?",
+      answer: "Blocked. The safety guardrail classified this request as a privacy violation; no answer was generated.",
+      context: [
+        { topic: "policy", text: "Domain rule: do not disclose or help retrieve another person's private room or identity information." }
+      ],
+      guard: { label: "UNSAFE", cls: "unsafe", detail: "Violated rule: privacy. Request blocked before generation." },
+      trace: [["classify", 2], ["retrieve", 38], ["guard", 92], ["trace.flush", 11]]
+    }
+  };
+
+  var pocScenario = document.getElementById("pocScenario");
+  var pocQuestion = document.getElementById("pocQuestion");
+  var pocAnswer = document.getElementById("pocAnswer");
+  var pocStatus = document.getElementById("pocStatus");
+
+  function renderPocContext(items) {
+    document.getElementById("tabContext").innerHTML = items.map(function (d) {
+      return '<div class="hit"><b>[' + d.topic + "]</b><p>" + d.text + "</p></div>";
+    }).join("");
+  }
+  function renderPocGuard(g) {
+    document.getElementById("tabGuard").innerHTML =
+      '<div class="verdict ' + g.cls + '">● ' + g.label + "</div><p>" + g.detail + "</p>";
+  }
+  function renderPocTrace(rows) {
+    var max = Math.max.apply(null, rows.map(function (r) { return r[1]; }));
+    document.getElementById("tabTrace").innerHTML = rows.map(function (r) {
+      return '<div class="trace-row"><span class="trace-name">' + r[0] +
+        '</span><span class="trace-bar"><span style="width:' + Math.round((r[1] / max) * 100) + '%"></span></span>' +
+        '<span class="trace-ms">' + r[1] + " ms</span></div>";
+    }).join("");
+  }
+  function runPoc() {
+    var s = POC[pocScenario.value];
+    var q = pocQuestion.value.trim();
+    pocAnswer.textContent = (q ? "Q: " + q + "\n\n" : "") + s.answer;
+    pocStatus.textContent = "simulated";
+    pocStatus.className = "status done";
+    renderPocContext(s.context);
+    renderPocGuard(s.guard);
+    renderPocTrace(s.trace);
+  }
+  document.getElementById("pocRun").addEventListener("click", runPoc);
+  pocScenario.addEventListener("change", function () { pocQuestion.value = POC[this.value].question; });
+  document.querySelectorAll(".tab").forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      document.querySelectorAll(".tab").forEach(function (t) { t.classList.remove("is-active"); });
+      tab.classList.add("is-active");
+      ["Context", "Guard", "Trace"].forEach(function (n) {
+        document.getElementById("tab" + n).classList.toggle("hidden", n.toLowerCase() !== tab.getAttribute("data-tab"));
+      });
+    });
+  });
+
   /* ---------- Init ---------- */
   renderLayer(0);
   renderScenario("a", "governed");
   renderScenario("b", "governed");
+  runPoc();
 })();
