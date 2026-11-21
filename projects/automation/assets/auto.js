@@ -46,7 +46,7 @@
       pain: "One-off internal integration could not support high transaction volumes or multi-party collaboration at scale.",
       checks: ["High availability", "Idempotency keys", "EOD reconciliation", "Cross-system compliance"],
       visual: [
-        { title: "Cloud integration hub", small: "API / EDI · peak transaction load" },
+        { title: "Integration hub", small: "API / EDI · peak transaction load" },
         { title: "Web · mobile · enterprise", small: "Multi-channel participants" },
         { title: "Scale + compliance guard", small: "Idempotency · reconciliation", control: true }
       ]
