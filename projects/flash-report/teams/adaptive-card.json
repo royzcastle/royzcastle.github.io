@@ -101,7 +101,7 @@
     {
       "type": "Action.OpenUrl",
       "title": "Open full report",
-      "url": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html"
+      "url": "https://royzcastle.github.io/projects/flash-report/index.html"
     }
   ]
 }

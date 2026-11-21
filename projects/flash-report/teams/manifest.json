@@ -6,9 +6,9 @@
   "packageName": "com.starlight.macau.flashreport",
   "developer": {
     "name": "CEO Office · Starlight Macau IR",
-    "websiteUrl": "https://REPLACE-WITH-YOUR-HOST.example.com",
-    "privacyUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/privacy",
-    "termsOfUseUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/terms"
+    "websiteUrl": "https://royzcastle.github.io",
+    "privacyUrl": "https://royzcastle.github.io/privacy",
+    "termsOfUseUrl": "https://royzcastle.github.io/terms"
   },
   "name": {
     "short": "AI Flash Report",
@@ -27,18 +27,18 @@
     {
       "entityId": "flash-personal",
       "name": "Flash Report",
-      "contentUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html",
-      "websiteUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html",
+      "contentUrl": "https://royzcastle.github.io/projects/flash-report/index.html",
+      "websiteUrl": "https://royzcastle.github.io/projects/flash-report/index.html",
       "scopes": ["personal"]
     },
     {
       "entityId": "flash-channel",
       "name": "Flash Report",
-      "contentUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html",
-      "websiteUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html",
+      "contentUrl": "https://royzcastle.github.io/projects/flash-report/index.html",
+      "websiteUrl": "https://royzcastle.github.io/projects/flash-report/index.html",
       "scopes": ["team", "groupChat"]
     }
   ],
   "permissions": ["identity"],
-  "validDomains": ["REPLACE-WITH-YOUR-HOST.example.com"]
+  "validDomains": ["royzcastle.github.io"]
 }
