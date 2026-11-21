@@ -158,8 +158,23 @@
     term.scrollTop = term.scrollHeight;
   }
 
+  function resetTerminal(silent) {
+    var term = document.getElementById("terminal");
+    term.innerHTML = '<div class="term-line"><span class="prompt">bastion:~$</span> session isolated · recording started</div>';
+    document.getElementById("blockBanner").hidden = true;
+    var input = document.getElementById("cmdInput");
+    input.disabled = false;
+    input.value = "";
+    terminated = false;
+    if (!silent) termLine("new privileged session started", "good");
+  }
+
   function runCommand(cmd) {
-    if (terminated || !cmd.trim()) return;
+    if (!cmd.trim()) return;
+    if (terminated) {
+      resetTerminal(true);
+      termLine("Previous session terminated by policy · new session started", "good");
+    }
     termLine("bastion:~$ " + cmd, "good");
     if (RISK.test(cmd)) {
       termLine("POLICY BLOCK · destructive command intercepted", "bad");
@@ -226,15 +241,7 @@
       var which = btn.getAttribute("data-reset");
       if (which === "jml") setJML("join");
       if (which === "jit") resetJit();
-      if (which === "term") {
-        var term = document.getElementById("terminal");
-        term.innerHTML = '<div class="term-line"><span class="prompt">bastion:~$</span> session isolated · recording started</div>';
-        document.getElementById("blockBanner").hidden = true;
-        var input = document.getElementById("cmdInput");
-        input.disabled = false;
-        input.value = "";
-        terminated = false;
-      }
+      if (which === "term") resetTerminal(true);
     });
   });
 
