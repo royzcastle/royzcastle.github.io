@@ -1,309 +1,231 @@
 (function () {
   "use strict";
 
-  const PROJECTS = {
+  var ICONS = {
+    shield: '<path d="M12 3l7 3v5c0 4.6-2.9 8.3-7 10-4.1-1.7-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
+    key: '<circle cx="8" cy="12" r="4"/><path d="M12 12h9M17 12v4M20 12v3"/>',
+    cloud: '<path d="M7 18h10a4 4 0 0 0 .6-8 6 6 0 0 0-11.4 1.6A3.2 3.2 0 0 0 7 18z"/>',
+    data: '<ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v14c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/>',
+    payment: '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/>',
+    chain: '<path d="M9 15l6-6"/><path d="M10.5 7.5l1.5-1.5a3.5 3.5 0 0 1 5 5L15.5 12.5M13.5 16.5L12 18a3.5 3.5 0 0 1-5-5l1.5-1.5"/>',
+    spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M18 16l.8 2.2L21 19l-2.2.8L18 22l-.8-2.2L15 19l2.2-.8z"/>',
+    chart: '<path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/>',
+    event: '<path d="M13 2L5 14h6l-1 8 8-12h-6z"/>',
+    mobile: '<rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/>',
+    doc: '<path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5M14 3v5h5"/>',
+    check: '<path d="M5 12l4 4 10-10"/>',
+    bolt: '<path d="M13 2L5 14h6l-1 8 8-12h-6z"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+    search: '<circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/>',
+    box: '<path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/>',
+    flow: '<circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 12h4V6h4M8 12h4v6h4"/>',
+    scan: '<path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M4 12h16"/>',
+    layers: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/>',
+    target: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>'
+  };
+
+  function svg(name) {
+    return '<svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" ' +
+      'stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' +
+      (ICONS[name] || ICONS.flow) + '</g></svg>';
+  }
+
+  var PROJECTS = {
     "iga-pam": {
       code: "IGA / PAM",
       category: "IDENTITY & ACCESS",
       title: "IGA & PAM Delivery",
-      summary: "A product-standard delivery for identity governance and privileged access, enhanced with tailored AI support for high-volume, repetitive operations.",
+      summary: "Identity governance and privileged-access delivery for regulated environments, enhanced with AI-assisted operations.",
+      signals: [
+        { icon: "shield", title: "Bank-grade controls", text: "IGA / IAM / PAM delivery in regulated settings" },
+        { icon: "spark", title: "AI augmentation", text: "Applied to repetitive, compliance-heavy workflows" },
+        { icon: "flow", title: "End-to-end ownership", text: "Architecture, product review and delivery" }
+      ],
       facts: [
-        { label: "Domain", value: "Identity & access" },
-        { label: "Mode", value: "Product-standard delivery" },
-        { label: "Focus", value: "Operational scale" },
-        { label: "Disclosure", value: "Anonymised" }
+        { label: "Role", value: "Solution lead / architect" },
+        { label: "Setting", value: "Regulated environment" },
+        { label: "Focus", value: "Control + efficiency" }
       ],
-      scope: [
-        "Identity lifecycle and access-review workflows",
-        "Privileged access processes",
-        "AI-assisted triage of routine operational tasks",
-        "Framework-level demonstration of controls and operational efficiency"
+      steps: [
+        { icon: "search", text: "Map workflow" },
+        { icon: "shield", text: "Embed controls" },
+        { icon: "spark", text: "Add AI assist" },
+        { icon: "check", text: "Review & handover" }
       ],
-      flow: ["Intake & scope", "Rules & controls", "AI-assisted triage", "Review & sign-off"],
-      layers: [
-        { title: "Access lifecycle", text: "Joiner, mover and leaver style workflows at a framework level." },
-        { title: "Privileged controls", text: "Structured handling of elevated access and related approvals." },
-        { title: "Exception handling", text: "Repeatable paths for routine exceptions and follow-up actions." },
-        { title: "Evidence trail", text: "Decision records and review points presented as audit-ready artifacts." }
+      cards: [
+        { icon: "key", title: "Access lifecycle", text: "Lifecycle, reviews and privileged-access processes." },
+        { icon: "spark", title: "AI-assisted operations", text: "Triage support for high-volume, repetitive work." },
+        { icon: "doc", title: "Evidence discipline", text: "Traceable decisions and approval checkpoints." }
       ],
-      controls: [
-        "Least-privilege framing",
-        "Human-in-the-loop approval",
-        "Traceable decision points",
-        "Separation of duties"
-      ],
-      phases: [
-        { title: "Baseline", text: "Map the standard product flow and identify repetitive operating steps." },
-        { title: "Assist design", text: "Shape an AI-assisted layer around routine triage and review support." },
-        { title: "Validation", text: "Exercise sample scenarios and check consistency of outcomes." },
-        { title: "Handover", text: "Document the operating model, controls and review responsibilities." }
-      ],
-      outcomes: [
-        "Reduced routine operational effort",
-        "More consistent review decisions",
-        "Clearer evidence for control owners",
-        "A scalable pattern for high-volume access operations"
-      ]
+      outcomes: ["Less manual effort", "More consistent decisions", "Audit-ready evidence"]
     },
     "retail-trading-grid": {
       code: "GRID",
       category: "GLOBAL LOGISTICS / CLOUD / DATA",
       title: "Global Logistics Cloud Grid",
-      summary: "A cloud and data integration platform connecting buyers and sellers across a global logistics network.",
+      summary: "Cloud and data integration for a global logistics network connecting distributed buyers and sellers.",
+      signals: [
+        { icon: "cloud", title: "Cloud at scale", text: "Platform delivery for global supply-chain networks" },
+        { icon: "data", title: "Data at scale", text: "Structured + unstructured processing and analytics" },
+        { icon: "globe", title: "Regional ownership", text: "APAC solution consulting and customer success" }
+      ],
       facts: [
+        { label: "Role", value: "Senior delivery lead" },
         { label: "Domain", value: "Global logistics" },
-        { label: "Mode", value: "Cloud & data" },
-        { label: "Network", value: "Distributed participants" },
-        { label: "Focus", value: "Integration & data exchange" }
+        { label: "Foundation", value: "Cloud + data" }
       ],
-      scope: [
-        "Large-scale connectivity across a distributed logistics network",
-        "Partner onboarding",
-        "Data exchange and normalisation",
-        "Operational monitoring across the logistics ecosystem"
+      steps: [
+        { icon: "globe", text: "Onboard" },
+        { icon: "cloud", text: "Connect" },
+        { icon: "data", text: "Exchange data" },
+        { icon: "chart", text: "Monitor" }
       ],
-      flow: ["Onboard participants", "Connect via cloud", "Exchange data", "Monitor operations"],
-      layers: [
-        { title: "Connectivity", text: "A shared cloud integration fabric for distributed logistics participants." },
-        { title: "Partner lifecycle", text: "Structured onboarding and ongoing participation at framework level." },
-        { title: "Data layer", text: "Data exchange and normalisation described as a repeatable operating pattern." },
-        { title: "Observability", text: "Monitoring views for operational health and exception awareness." }
+      cards: [
+        { icon: "cloud", title: "Participant connectivity", text: "Cloud integration fabric for distributed participants." },
+        { icon: "data", title: "Data foundation", text: "Structured and unstructured data for operations." },
+        { icon: "chart", title: "Forecasting & governance", text: "Operational ML with data governance." }
       ],
-      controls: [
-        "Participant identity and permissions",
-        "Data consistency checks",
-        "Exception routing",
-        "Service-level monitoring"
-      ],
-      phases: [
-        { title: "Map", text: "Define participant groups and the integration boundaries across the logistics network." },
-        { title: "Design", text: "Shape common cloud and data patterns for onboarding, exchange and exception handling." },
-        { title: "Scale", text: "Extend the model across a large, distributed participant community." },
-        { title: "Operate", text: "Establish monitoring and review routines for ongoing operations." }
-      ],
-      outcomes: [
-        "Scalable participant connectivity",
-        "More consistent partner onboarding",
-        "Clearer data visibility",
-        "Operationally resilient integration patterns"
-      ]
+      outcomes: ["Scalable onboarding", "Consistent data exchange", "Operational visibility"]
     },
     "iso-20022": {
       code: "20022",
       category: "PAYMENTS",
       title: "ISO 20022 Payments",
-      summary: "A Southeast Asia payments connectivity project involving ISO 20022, with clearing flows spanning the Americas and China.",
+      summary: "Payments connectivity work involving ISO 20022, linking Southeast Asia with clearing flows spanning the Americas and China.",
+      signals: [
+        { icon: "payment", title: "Cross-border payments", text: "Connectivity across SEA, Americas and China" },
+        { icon: "flow", title: "Standards-led mapping", text: "Message structure, validation and format mapping" },
+        { icon: "globe", title: "Multi-region review", text: "Clearing-flow review across three regions" }
+      ],
       facts: [
         { label: "Domain", value: "Payments" },
-        { label: "Mode", value: "Connectivity & mapping" },
         { label: "Reach", value: "Three regions" },
-        { label: "Standard", value: "ISO 20022" }
+        { label: "Focus", value: "Connectivity" }
       ],
-      scope: [
-        "Cross-border payment-message structure",
-        "Data validation",
-        "Format mapping",
-        "End-to-end clearing-flow review across three regions"
+      steps: [
+        { icon: "payment", text: "Intake" },
+        { icon: "check", text: "Validate" },
+        { icon: "flow", text: "Map format" },
+        { icon: "globe", text: "Clearing review" }
       ],
-      flow: ["Message intake", "Validate", "Map format", "Clearing review"],
-      layers: [
-        { title: "Messaging", text: "Cross-border payment-message structure described at framework level." },
-        { title: "Data quality", text: "Validation checkpoints for completeness and consistency." },
-        { title: "Format alignment", text: "Mapping logic presented as a controlled translation layer." },
-        { title: "Clearing view", text: "End-to-end flow review across multiple regional clearing paths." }
+      cards: [
+        { icon: "payment", title: "Messaging", text: "Payment-message structure across regions." },
+        { icon: "check", title: "Data quality", text: "Validation and format-mapping checkpoints." },
+        { icon: "globe", title: "Clearing view", text: "End-to-end flow and exception handling." }
       ],
-      controls: [
-        "Standards alignment",
-        "Validation gates",
-        "Reconciliation checkpoints",
-        "Exception handling"
-      ],
-      phases: [
-        { title: "Discover", text: "Map the regional flows and identify message-handling boundaries." },
-        { title: "Define", text: "Set validation and mapping rules at a framework level." },
-        { title: "Validate", text: "Review representative scenarios across the three regions." },
-        { title: "Handover", text: "Document controls, review points and operating responsibilities." }
-      ],
-      outcomes: [
-        "Improved interoperability framing",
-        "Consistent data-quality gates",
-        "Clearer regional flow ownership",
-        "Traceable review and exception paths"
-      ]
+      outcomes: ["Interoperability", "Validation gates", "Traceable review"]
     },
     "web3-nft-mm": {
       code: "WEB3",
       category: "CYBER / BLOCKCHAIN / DIGITAL ASSETS",
       title: "Cyber, Blockchain & Digital Assets",
-      summary: "Personal work across cyber and blockchain-oriented digital assets, including NFTs and automated market making.",
+      summary: "Personal work across cyber, blockchain and digital assets, from on-chain research to automated market making.",
+      signals: [
+        { icon: "chain", title: "Hands-on operator", text: "Ran market making, not only research" },
+        { icon: "search", title: "On-chain research", text: "Protocols, wallet flows and liquidity depth" },
+        { icon: "bolt", title: "Volatility experience", text: "Two-sided quoting and inventory discipline" }
+      ],
       facts: [
         { label: "Domain", value: "Cyber & blockchain" },
-        { label: "Mode", value: "Personal R&D" },
         { label: "Assets", value: "NFT & digital assets" },
-        { label: "Disclosure", value: "Anonymised" }
+        { label: "Mode", value: "Personal R&D" }
       ],
-      scope: [
-        "Prototype design and on-chain interactions",
-        "NFT minting and marketplace flows",
-        "Liquidity and quoting workflows",
-        "Performance review"
+      steps: [
+        { icon: "search", text: "Research" },
+        { icon: "box", text: "Prototype" },
+        { icon: "chain", text: "On-chain test" },
+        { icon: "chart", text: "Review" }
       ],
-      flow: ["Concept", "Prototype", "On-chain test", "Review & iterate"],
-      layers: [
-        { title: "Prototype design", text: "Idea-to-prototype framing for digital-asset experiments." },
-        { title: "On-chain interaction", text: "Transaction and interaction patterns described at a high level." },
-        { title: "NFT flows", text: "Minting and marketplace journeys presented as scope-level flows." },
-        { title: "Market making", text: "Liquidity and quoting workflows framed as an operating loop." }
+      cards: [
+        { icon: "search", title: "On-chain research", text: "Protocol, flow and liquidity-depth exploration." },
+        { icon: "box", title: "Digital assets", text: "NFT minting and marketplace flows at framework level." },
+        { icon: "chart", title: "Market making", text: "Liquidity and quoting workflows with performance review." }
       ],
-      controls: [
-        "Experimental scope boundaries",
-        "Access and key hygiene",
-        "Scenario testing",
-        "Performance review"
-      ],
-      phases: [
-        { title: "Explore", text: "Identify a focused question or opportunity in the digital-asset space." },
-        { title: "Prototype", text: "Build a small, testable representation of the idea." },
-        { title: "Exercise", text: "Run representative interactions and observe behaviour." },
-        { title: "Review", text: "Capture lessons and decide whether to iterate or stop." }
-      ],
-      outcomes: [
-        "Hands-on blockchain exploration",
-        "Faster idea-to-test cycle",
-        "Better risk awareness",
-        "Reusable experiment patterns"
-      ]
+      outcomes: ["Fast idea-to-test", "Hands-on blockchain", "Risk-aware iteration"]
     },
     "programmatic-trading": {
       code: "ALGO",
       category: "DATA-DRIVEN / EVENT-DRIVEN ALGORITHMS",
       title: "Algorithmic Trading Research",
-      summary: "Data-driven and event-driven algorithmic trading research, developed through iterative algorithm cycles.",
+      summary: "Research-led algorithmic trading across Hong Kong and US equities — data-driven, event-driven and iteratively refined.",
+      signals: [
+        { icon: "chart", title: "Full research loop", text: "Data ingestion → event detection → backtest → execution" },
+        { icon: "event", title: "Event-driven", text: "Earnings, filings, guidance and macro releases" },
+        { icon: "flow", title: "HK → US port", text: "Rebuilt a Hong Kong system for US equities" }
+      ],
       facts: [
-        { label: "Domain", value: "HK / US equities" },
-        { label: "Mode", value: "Research-led" },
-        { label: "Approach", value: "Data & event driven" },
-        { label: "Method", value: "Iterative algorithms" }
+        { label: "Markets", value: "HK / US equities" },
+        { label: "Logic", value: "Data + events" },
+        { label: "Method", value: "Iterative research" }
       ],
-      scope: [
-        "Hypothesis development",
-        "Data and event inputs",
-        "Iterative algorithm refinement",
-        "Backtesting and simulated trade-record analysis",
-        "Robustness checks and risk attribution"
+      steps: [
+        { icon: "spark", text: "Hypothesis" },
+        { icon: "event", text: "Event inputs" },
+        { icon: "chart", text: "Backtest" },
+        { icon: "check", text: "Review" }
       ],
-      flow: ["Hypothesis", "Data & events", "Iterate algorithm", "Backtest & risk"],
-      layers: [
-        { title: "Research framing", text: "Ideas expressed as testable hypotheses rather than anecdotes." },
-        { title: "Data-driven layer", text: "Research described as evidence-led, with data inputs framed at a high level." },
-        { title: "Event-driven layer", text: "Event inputs treated as triggers within the research loop, without implementation detail." },
-        { title: "Iterative review", text: "Algorithms refined through repeated testing, robustness checks and risk attribution." }
+      cards: [
+        { icon: "event", title: "Event detection", text: "Earnings, filings, guidance and macro-release research." },
+        { icon: "chart", title: "Backtesting discipline", text: "Simulated records, robustness and overfitting control." },
+        { icon: "flow", title: "Iterative refinement", text: "Position sizing, attribution and post-trade review." }
       ],
-      controls: [
-        "Look-ahead awareness",
-        "Out-of-sample thinking",
-        "Overfitting checks",
-        "Risk-first interpretation"
-      ],
-      phases: [
-        { title: "Question", text: "Define the research question and the evidence needed to answer it." },
-        { title: "Build", text: "Shape data- and event-driven logic as an iterative research cycle." },
-        { title: "Challenge", text: "Run backtests, robustness checks and look for failure modes." },
-        { title: "Interpret", text: "Frame conclusions with simulated records, risk attribution and explicit caveats." }
-      ],
-      outcomes: [
-        "Disciplined research process",
-        "Reproducible analysis habits",
-        "Iterative algorithm refinement",
-        "Clear audit trail from idea to conclusion"
-      ]
+      outcomes: ["Reproducible research", "Risk-first interpretation", "Clear audit trail"]
     },
     "document-management-ocr-erp": {
       code: "DOC",
       category: "DOCUMENT MANAGEMENT / OCR / ERP",
       title: "Document Management & OCR-to-ERP",
       summary: "Intelligent document processing that turns scanned documents into structured data for ERP workflows.",
+      signals: [
+        { icon: "scan", title: "Scan → ERP", text: "Document-heavy workflow automation" },
+        { icon: "doc", title: "Unstructured data", text: "OCR extraction into structured fields" },
+        { icon: "flow", title: "Enterprise process", text: "ERP handoff for downstream processing" }
+      ],
       facts: [
         { label: "Domain", value: "Document management" },
-        { label: "Mode", value: "Scan → ERP" },
-        { label: "Focus", value: "Extraction & validation" },
-        { label: "Disclosure", value: "Anonymised" }
+        { label: "Path", value: "Scan → ERP" },
+        { label: "Focus", value: "Extraction + validation" }
       ],
-      scope: [
-        "Scanned document intake",
-        "OCR and structured data extraction",
-        "Validation and exception handling",
-        "ERP handoff and downstream processing"
+      steps: [
+        { icon: "scan", text: "Scan intake" },
+        { icon: "doc", text: "OCR extraction" },
+        { icon: "check", text: "Validate" },
+        { icon: "data", text: "ERP" }
       ],
-      flow: ["Scan intake", "OCR extraction", "Validate data", "Post to ERP"],
-      layers: [
-        { title: "Capture", text: "Document intake described as a controlled entry point into a processing flow." },
-        { title: "Extraction", text: "Unstructured content converted into structured fields at a framework level." },
-        { title: "Validation", text: "Checkpoints and exception paths described without implementation detail." },
-        { title: "ERP integration", text: "Approved data handed off for downstream business processing." }
+      cards: [
+        { icon: "scan", title: "Capture & extraction", text: "Scanned content converted into structured fields." },
+        { icon: "check", title: "Validation & exceptions", text: "Quality gates and clear exception routing." },
+        { icon: "data", title: "ERP handoff", text: "Approved data passed into downstream processing." }
       ],
-      controls: [
-        "Data-quality checks",
-        "Exception routing",
-        "Audit trail",
-        "Access control"
-      ],
-      phases: [
-        { title: "Map", text: "Identify document types and the downstream ERP steps that depend on them." },
-        { title: "Define", text: "Shape extraction, validation and exception rules at a framework level." },
-        { title: "Integrate", text: "Frame the handoff into ERP workflows and review responsibilities." },
-        { title: "Operate", text: "Establish monitoring and review routines for ongoing document processing." }
-      ],
-      outcomes: [
-        "Less manual keying",
-        "Faster document turnaround",
-        "More consistent data quality",
-        "Traceable processing from scan to ERP"
-      ]
-    }
-,
+      outcomes: ["Less manual keying", "Consistent data quality", "Traceable processing"]
+    },
     "mobile-app-development": {
       code: "APP",
       category: "APP DEVELOPMENT",
       title: "Mobile App Development",
-      summary: "Turning an interactive web experience into a mobile-ready app prepared for distribution.",
+      summary: "An interactive web experience adapted into a mobile-ready app prepared for distribution.",
+      signals: [
+        { icon: "mobile", title: "Web → mobile", text: "Interactive web experience adapted for phones" },
+        { icon: "box", title: "Store-ready", text: "Packaging, assets and release workflow" },
+        { icon: "layers", title: "Full-stack delivery", text: "Web and mobile engineering in one scope" }
+      ],
       facts: [
         { label: "Domain", value: "App development" },
-        { label: "Mode", value: "Web → mobile" },
-        { label: "Focus", value: "Store readiness" },
-        { label: "Disclosure", value: "Anonymised" }
+        { label: "Path", value: "Web → mobile" },
+        { label: "Goal", value: "Store readiness" }
       ],
-      scope: [
-        "Touch UI adaptation",
-        "Mobile packaging",
-        "Store assets and publishing readiness",
-        "Release build workflow"
+      steps: [
+        { icon: "search", text: "Audit web" },
+        { icon: "mobile", text: "Adapt touch" },
+        { icon: "box", text: "Package" },
+        { icon: "check", text: "Validate" }
       ],
-      flow: ["Web baseline", "Touch adaptation", "Packaging", "Store readiness"],
-      layers: [
-        { title: "Interface", text: "Interactive experience adapted for touch and mobile viewing." },
-        { title: "Packaging", text: "Web experience wrapped into a mobile-ready delivery format." },
-        { title: "Store assets", text: "Icons, feature visuals and policy artifacts prepared for review." },
-        { title: "Release", text: "Build and publishing workflow documented as a repeatable process." }
+      cards: [
+        { icon: "mobile", title: "Touch UI adaptation", text: "Controls and layout adjusted for mobile interaction." },
+        { icon: "box", title: "Mobile packaging", text: "Web experience prepared as a distributable app." },
+        { icon: "doc", title: "Store readiness", text: "Assets, permissions and release-build workflow." }
       ],
-      controls: [
-        "Platform guideline awareness",
-        "Permission and privacy review",
-        "Release checklist",
-        "Asset consistency"
-      ],
-      phases: [
-        { title: "Audit", text: "Review the web experience for mobile interaction gaps." },
-        { title: "Adapt", text: "Adjust controls and layout for touch-first use." },
-        { title: "Package", text: "Prepare the app bundle and required distribution assets." },
-        { title: "Validate", text: "Check the release build and document the handover steps." }
-      ],
-      outcomes: [
-        "Reusable web core",
-        "Mobile-ready user experience",
-        "Distribution readiness",
-        "Documented release workflow"
-      ]
+      outcomes: ["Reusable web core", "Mobile-ready UX", "Documented release"]
     }
   };
 
@@ -314,8 +236,8 @@
   }
 
   function render() {
-    const key = new URLSearchParams(window.location.search).get("p") || "iga-pam";
-    const p = PROJECTS[key] || PROJECTS["iga-pam"];
+    var key = new URLSearchParams(window.location.search).get("p") || "iga-pam";
+    var p = PROJECTS[key] || PROJECTS["iga-pam"];
     document.title = p.title + " · Scope · royzcastle";
 
     document.getElementById("projectCode").textContent = p.code;
@@ -327,31 +249,23 @@
       return '<div class="fact"><span>' + esc(f.label) + '</span><strong>' + esc(f.value) + '</strong></div>';
     }).join("");
 
-    document.getElementById("scopeList").innerHTML = p.scope.map(function (s) {
-      return "<li>" + esc(s) + "</li>";
+    document.getElementById("signals").innerHTML = p.signals.map(function (s) {
+      return '<article class="signal"><div class="icon">' + svg(s.icon) + '</div><div><h3>' +
+        esc(s.title) + '</h3><p>' + esc(s.text) + '</p></div></article>';
     }).join("");
 
-    document.getElementById("flow").innerHTML = p.flow.map(function (s, i) {
-      return '<div class="flow-step"><span>' + (i + 1) + '</span><b>' + esc(s) + '</b></div>' +
-        (i < p.flow.length - 1 ? '<div class="flow-arrow">→</div>' : "");
+    document.getElementById("flow").innerHTML = p.steps.map(function (s, i) {
+      return '<div class="flow-step"><div class="icon">' + svg(s.icon) + '</div><b>' + esc(s.text) +
+        '</b></div>' + (i < p.steps.length - 1 ? '<div class="flow-arrow">→</div>' : "");
     }).join("");
 
-    document.getElementById("layers").innerHTML = p.layers.map(function (l, i) {
-      return '<article class="layer"><span>' + (i + 1) + '</span><h3>' + esc(l.title) +
-        '</h3><p>' + esc(l.text) + '</p></article>';
-    }).join("");
-
-    document.getElementById("controls").innerHTML = p.controls.map(function (c) {
-      return "<li>" + esc(c) + "</li>";
-    }).join("");
-
-    document.getElementById("phases").innerHTML = p.phases.map(function (ph, i) {
-      return '<div class="phase"><span class="phase-no">' + (i + 1) + '</span><div><h3>' +
-        esc(ph.title) + '</h3><p>' + esc(ph.text) + '</p></div></div>';
+    document.getElementById("cards").innerHTML = p.cards.map(function (c) {
+      return '<article class="point"><div class="icon">' + svg(c.icon) + '</div><h3>' +
+        esc(c.title) + '</h3><p>' + esc(c.text) + '</p></article>';
     }).join("");
 
     document.getElementById("outcomes").innerHTML = p.outcomes.map(function (o) {
-      return "<li>" + esc(o) + "</li>";
+      return '<li><span class="icon">' + svg("check") + '</span>' + esc(o) + '</li>';
     }).join("");
   }
 

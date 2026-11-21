@@ -1,6 +1,6 @@
 # royzcastle.github.io
 
-Public, framework-level project index for resume use. Scan the QR code on a resume to land here, then choose a project. All nine cards open a project page: two interactive showcases and seven framework-level scope pages.
+Public, framework-level project index for resume use. Scan the QR code on a resume to land here, then choose a project. All nine cards open a unified Project Detail page. Pages use anonymised, framework-level content.
 
 ## Live
 
