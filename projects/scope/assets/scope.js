@@ -185,6 +185,10 @@
   function render() {
     var key = new URLSearchParams(window.location.search).get("p") || "iga-pam";
     key = ALIASES[key] || key;
+    if (key === "iga-pam") {
+      window.location.replace("../iga-pam/index.html");
+      return;
+    }
     if (!PROJECTS[key]) {
       window.location.replace("../../index.html");
       return;

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <meta name="description" content="Interactive governance and reference-architecture sandbox for identity lifecycle, privileged access and AI agent identity." />
+  <title>IAM, PAM &amp; AI Identity Governance Blueprint</title>
+  <link rel="stylesheet" href="assets/iam.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="back" href="../../index.html">← Project index</a>
+    <div class="topbar-right">
+      <span class="topbar-tag">INTERACTIVE SANDBOX</span>
+      <span class="topbar-entity">APEX FINANCIAL HOLDINGS · REFERENCE MODEL</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">IDENTITY &amp; ACCESS GOVERNANCE · OPERATING MODEL</span>
+      <h1>Identity, privilege and<br /><span>AI agent governance</span></h1>
+      <p class="lede">
+        An interactive architecture sandbox showing how identity lifecycle, segregation of duties,
+        zero standing privilege and non-human identity controls come together in a regulated enterprise.
+        All entities and data are fictional.
+      </p>
+      <div class="hero-metrics">
+        <div><strong>2,000+</strong><span>critical servers in scope</span></div>
+        <div><strong>0</strong><span>standing privileges</span></div>
+        <div><strong>04</strong><span>interactive modules</span></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="jump" aria-label="Module navigation">
+    <a href="#m1"><b>01</b> Lifecycle &amp; SoD</a>
+    <a href="#m2"><b>02</b> Zero standing privilege</a>
+    <a href="#m3"><b>03</b> AI agent / NHI</a>
+    <a href="#m4"><b>04</b> Control mapping</a>
+  </nav>
+
+  <main>
+    <!-- ============ MODULE 1 ============ -->
+    <section class="module" id="m1">
+      <div class="module-head">
+        <span class="mod-num">01</span>
+        <div>
+          <span class="mod-kicker">IGA · GOVERNANCE LIFECYCLE</span>
+          <h2>Lifecycle, duty separation and certification</h2>
+          <p>Human identity from joiner to leaver, with duty-conflict detection and periodic review.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h3>JML state machine</h3>
+            <p>Pick an HR event to see role calculation, permission cleanup and session handling.</p>
+          </div>
+          <button class="reset" data-reset="jml">Reset</button>
+        </div>
+        <div class="event-row" role="group" aria-label="HR event">
+          <button class="event-btn is-active" data-event="join"><span>＋</span> New hire</button>
+          <button class="event-btn" data-event="move"><span>⇄</span> Department transfer</button>
+          <button class="event-btn" data-event="leave"><span>×</span> Termination</button>
+        </div>
+        <div class="flow" id="jmlFlow">
+          <div class="flow-step"><span>1</span><b>HRIS event</b><small id="jml-event">New hire recorded</small></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span>2</span><b>Role engine</b><small id="jml-role">RBAC + ABAC mapping</small></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span>3</span><b>Downstream systems</b><small id="jml-systems">Provision across 240 apps</small></div>
+          <div class="flow-line"></div>
+          <div class="flow-step"><span>4</span><b>Access state</b><small id="jml-state">Granted · reviewed</small></div>
+        </div>
+        <div class="jml-readout" id="jmlReadout" aria-live="polite"></div>
+      </div>
+
+      <div class="panel-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <div><h3>Segregation of duties</h3><p>Toggle role requests to test the policy engine.</p></div>
+          </div>
+          <div class="sod-controls" role="group" aria-label="Role requests">
+            <button class="role-btn" data-role="initiator" aria-pressed="false">Payment initiator</button>
+            <button class="role-btn" data-role="approver" aria-pressed="false">Payment approver</button>
+          </div>
+          <div class="sod-status" id="sodStatus" aria-live="polite">
+            <span class="dot"></span><b>No conflict</b><small>Select two roles to run the check</small>
+          </div>
+          <div class="sod-rule">RULE&nbsp; SOD-PAY-01 &nbsp;·&nbsp; Initiator and approver must not be the same identity</div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div><h3>Access certification</h3><p>Quarterly review with dormant-access highlighting.</p></div>
+          </div>
+          <table class="review-table">
+            <thead><tr><th>Entitlement</th><th>Last used</th><th>Decision</th></tr></thead>
+            <tbody id="reviewBody">
+              <tr><td>Payment approval · Level 2</td><td>12 days ago</td><td><button class="tiny keep">Keep</button></td></tr>
+              <tr class="dormant"><td>Production data export</td><td><b>142 days ago</b></td><td><button class="tiny revoke" data-name="Production data export">Revoke</button></td></tr>
+              <tr><td>Finance report read</td><td>3 days ago</td><td><button class="tiny keep">Keep</button></td></tr>
+              <tr class="dormant"><td>Legacy admin console</td><td><b>210 days ago</b></td><td><button class="tiny revoke" data-name="Legacy admin console">Revoke</button></td></tr>
+            </tbody>
+          </table>
+          <div class="audit-note" id="auditNote" aria-live="polite">Dormant access flagged: 2 · 0 revoked this session</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MODULE 2 ============ -->
+    <section class="module" id="m2">
+      <div class="module-head">
+        <span class="mod-num">02</span>
+        <div>
+          <span class="mod-kicker">PAM · ZERO STANDING PRIVILEGE</span>
+          <h2>Just-in-time access and session control</h2>
+          <p>Elevation is requested, approved, time-bound, recorded and automatically revoked.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div><h3>JIT elevation workflow</h3><p>Scenario: engineer needs read access to a production database to investigate an incident.</p></div>
+          <button class="reset" data-reset="jit">Reset</button>
+        </div>
+        <div class="jit-steps" id="jitSteps">
+          <div class="jit-step"><span>1</span><b>Request</b><small>Linked change ticket</small></div>
+          <div class="jit-step"><span>2</span><b>Approve</b><small>MFA + authoriser</small></div>
+          <div class="jit-step"><span>3</span><b>Elevate</b><small>Ephemeral credential</small></div>
+          <div class="jit-step"><span>4</span><b>Operate</b><small>Recorded session</small></div>
+          <div class="jit-step"><span>5</span><b>Revoke</b><small>Auto expiry + rotation</small></div>
+        </div>
+        <div class="jit-actions">
+          <button class="primary" id="jitRun">Run elevation request</button>
+          <div class="jit-cred" id="jitCred">Standing privilege: <b>0</b> · no active credential</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div><h3>Privileged session — live control</h3><p>Commands pass through an isolated proxy. Try a benign command, then a destructive one.</p></div>
+          <button class="reset" data-reset="term">New session</button>
+        </div>
+        <div class="terminal" id="terminal" aria-live="polite">
+          <div class="term-line"><span class="prompt">bastion:~$</span> session isolated · recording started</div>
+        </div>
+        <div class="cmd-row">
+          <button class="cmd safe" data-cmd="whoami">whoami</button>
+          <button class="cmd safe" data-cmd="show databases">show databases</button>
+          <button class="cmd risk" data-cmd="DROP TABLE ledger">DROP TABLE ledger</button>
+          <button class="cmd risk" data-cmd="rm -rf /var/log">rm -rf /var/log</button>
+        </div>
+        <form class="cmd-form" id="cmdForm">
+          <input id="cmdInput" type="text" placeholder="type a command…" autocomplete="off" aria-label="Command" />
+          <button type="submit">Send</button>
+        </form>
+        <div class="block-banner" id="blockBanner" hidden>
+          <b>POLICY BLOCK</b> Destructive command intercepted — session terminated, evidence retained for audit replay.
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MODULE 3 ============ -->
+    <section class="module" id="m3">
+      <div class="module-head">
+        <span class="mod-num">03</span>
+        <div>
+          <span class="mod-kicker">NON-HUMAN IDENTITY · AI AGENTS</span>
+          <h2>Governing the agents, not just the people</h2>
+          <p>Extend IAM discipline to agents, MCP-style connectors and automation accounts.</p>
+        </div>
+      </div>
+
+      <div class="panel-grid">
+        <div class="panel">
+          <div class="panel-head"><div><h3>At-rest key vs scoped token</h3><p>Switch modes to compare the access an agent receives.</p></div></div>
+          <div class="mode-switch" role="group" aria-label="Token mode">
+            <button class="mode-btn is-active" data-mode="static">Hard-coded key</button>
+            <button class="mode-btn" data-mode="scoped">Scoped ephemeral token</button>
+          </div>
+          <div class="token-box" id="tokenBox">
+            <div class="token-head"><span class="token-label">AGENT CREDENTIAL</span><span class="token-state bad">STATIC · OVER-PRIVILEGED</span></div>
+            <code id="tokenValue">AKIA•••••••••••••••• (no expiry, full scope)</code>
+            <div class="token-scopes" id="tokenScopes"><span>write</span><span>all business lines</span><span>no expiry</span></div>
+          </div>
+          <p class="fine">Agent identity is issued on demand, scoped to one business line and expired automatically — never a shared administrator secret.</p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><div><h3>Identity pass-through</h3><p>The agent inherits the human requester's entitlements — nothing more.</p></div></div>
+          <div class="chain">
+            <div class="chain-node"><b>Human user</b><small>Analyst · Risk team</small></div>
+            <div class="chain-arrow">→</div>
+            <div class="chain-node accent"><b>AI agent</b><small>Acts on behalf of user</small></div>
+            <div class="chain-arrow">→</div>
+            <div class="chain-node"><b>Downstream system</b><small>Enforces inherited scope</small></div>
+          </div>
+          <div class="inherit" id="inheritBox">
+            <div><span>Inherited tags</span><b>risk.read</b><b>report.read</b></div>
+            <div><span>Denied</span><b class="deny">payment.approve</b><b class="deny">production.write</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MODULE 4 ============ -->
+    <section class="module" id="m4">
+      <div class="module-head">
+        <span class="mod-num">04</span>
+        <div>
+          <span class="mod-kicker">ASSURANCE · CONTROL MAPPING</span>
+          <h2>From technical control to audit evidence</h2>
+          <p>Each mechanism maps to a recognised control objective and a measurable indicator.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><h3>Control mapping matrix</h3><p>Reference frameworks shown at objective level; no client-specific mapping is disclosed.</p></div></div>
+        <div class="table-scroll">
+          <table class="map-table">
+            <thead><tr><th>Control point</th><th>Framework objective</th><th>Evidence produced</th></tr></thead>
+            <tbody>
+              <tr><td><b>JML automation</b></td><td>Joiner / mover / leaver control</td><td>Provisioning and revocation log</td></tr>
+              <tr><td><b>SoD policy engine</b></td><td>Segregation of duties</td><td>Blocked request + exception approval</td></tr>
+              <tr><td><b>Just-in-time elevation</b></td><td>Least privilege / time-bound access</td><td>Approval, TTL and rotation record</td></tr>
+              <tr><td><b>Session isolation &amp; recording</b></td><td>Privileged activity monitoring</td><td>Replayable session evidence</td></tr>
+              <tr><td><b>NHI scoped tokens</b></td><td>Service-account governance</td><td>Issuance and scope audit trail</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine">Framework labels are generic objective names (aligned to common information-security and SOC-style control families) to avoid disclosing any client-specific control matrix.</p>
+      </div>
+
+      <div class="kri-grid">
+        <div class="kri"><span>PRIVILEGED ACCOUNT COVERAGE</span><strong>100%</strong><small>accounts under management</small></div>
+        <div class="kri"><span>ORPHAN ACCOUNT CLEANUP</span><strong>&lt; 15 min</strong><small>detection to revocation</small></div>
+        <div class="kri"><span>SoD CONFLICT INTERCEPTION</span><strong>100%</strong><small>of tested policy violations</small></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <details class="legal">
+      <summary>Scope notice</summary>
+      <div class="legal-body">
+        <strong>Confidentiality &amp; Scope Notice:</strong>
+        Apex Financial Holdings is a fictional entity. All figures, workflows, dashboards and sample outputs in this
+        sandbox are synthetic or illustrative and are provided for demonstration only. No proprietary designs, source
+        code, internal documents or confidential information of any employer or client are disclosed. Nothing here is
+        financial, investment or legal advice.
+      </div>
+    </details>
+    <a class="foot-link" href="../../index.html">← All projects</a>
+  </footer>
+
+  <script src="assets/iam.js"></script>
+</body>
+</html>
