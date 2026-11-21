@@ -33,20 +33,20 @@
       code: "IGA / PAM",
       category: "IDENTITY & PRIVILEGED ACCESS",
       title: "IGA & PAM Delivery",
-      summary: "One delivery containing two co-existing modules: identity lifecycle governance and privileged access control across enterprise systems and devices.",
+      summary: "Two enterprise security products delivered side by side: identity lifecycle governance (IGA) and privileged access control (PAM) for regulated banks and public bodies.",
       signs: [
-        { icon: "key", title: "IGA lifecycle", text: "Upstream/downstream systems, AD/JML and entitlement renewal decisions" },
-        { icon: "lock", title: "PAM coverage", text: "Windows, Linux, cloud, SAP, databases, network devices and sessions" },
+        { icon: "key", title: "IGA product", text: "Identity governance covering upstream/downstream systems, AD/JML and renewal decisions" },
+        { icon: "lock", title: "PAM product", text: "Privileged access spanning hosts, cloud, SAP, databases, network devices and sessions" },
         { icon: "flow", title: "Control evidence", text: "Workflow, recording, approval, audit trail and compliance reporting" }
       ],
       facts: [
         { label: "Domain", value: "Identity & privileged access" },
-        { label: "Modules", value: "IGA + PAM" },
+        { label: "Products", value: "IGA + PAM" },
         { label: "Focus", value: "Decision support + session control" }
       ],
       modules: [
         {
-          icon: "key", title: "IGA module", tag: "Identity governance",
+          icon: "key", title: "IGA product", tag: "Identity governance",
           items: [
             "Upstream / downstream systems", "AD integration", "Joiner–mover–leaver", "Entitlement catalogue",
             "Permission definition", "Access request and approval", "Access review / certification", "Renewal decision support",
@@ -55,7 +55,7 @@
           ]
         },
         {
-          icon: "lock", title: "PAM module", tag: "Privileged access",
+          icon: "lock", title: "PAM product", tag: "Privileged access",
           items: [
             "Windows / Linux / Unix hosts", "Cloud platforms and workloads", "SAP and enterprise applications", "Databases",
             "Routers, switches, firewalls and appliances", "Virtualisation and container platforms", "Credential vault",
@@ -79,89 +79,63 @@
       ],
       outcomes: ["Faster access decisions", "Controlled privileged sessions", "Audit-ready evidence"]
     },
-    "global-logistics-grid": {
-      code: "GRID",
-      category: "GLOBAL LOGISTICS / CLOUD / DATA",
-      title: "Global Logistics Cloud Grid",
-      summary: "Cloud and data integration for a global logistics network connecting distributed buyers and sellers.",
+    "automation-data": {
+      code: "AUTO",
+      category: "AUTOMATION / CLOUD / DATA",
+      title: "Enterprise Automation & Data",
+      summary: "Cloud and data automation across finance, supply chain and cross-border payment clearing — data lakes, integration services and document-to-ERP processing.",
       signs: [
-        { icon: "cloud", title: "Cloud at scale", text: "Integration platform for global logistics participants" },
-        { icon: "data", title: "Data at scale", text: "Structured and unstructured processing, exchange and analytics" },
-        { icon: "globe", title: "Network operations", text: "Partner onboarding, monitoring and exception awareness" }
+        { icon: "cloud", title: "Cloud integration", text: "High-throughput integration platform connecting enterprise and supply-chain workloads" },
+        { icon: "data", title: "Data at scale", text: "Data lakes for structured and unstructured processing, exchange and analytics" },
+        { icon: "globe", title: "Cross-border clearing", text: "Payment connectivity with clearing flows across Southeast Asia, the Americas and China" }
       ],
       facts: [
-        { label: "Domain", value: "Global logistics" },
+        { label: "Domain", value: "Finance / supply chain" },
         { label: "Foundation", value: "Cloud + data" },
-        { label: "Focus", value: "Connectivity" }
+        { label: "Focus", value: "Automation" }
       ],
       steps: [
-        { icon: "globe", text: "Onboard" },
         { icon: "cloud", text: "Connect" },
-        { icon: "data", text: "Exchange data" },
-        { icon: "chart", text: "Monitor" }
-      ],
-      cards: [
-        { icon: "cloud", title: "Participant connectivity", text: "Cloud integration fabric for distributed buyers and sellers." },
-        { icon: "data", title: "Data foundation", text: "Structured and unstructured data for operations and analytics." },
-        { icon: "chart", title: "Forecasting & governance", text: "Operational ML with monitoring and data governance." }
-      ],
-      outcomes: ["Scalable onboarding", "Consistent data exchange", "Operational visibility"]
-    },
-    "iso-20022": {
-      code: "20022",
-      category: "PAYMENTS",
-      title: "ISO 20022 Payments",
-      summary: "Payments connectivity work involving ISO 20022, linking Southeast Asia with clearing flows spanning the Americas and China.",
-      signs: [
-        { icon: "payment", title: "Cross-border payments", text: "Connectivity across Southeast Asia, Americas and China" },
-        { icon: "flow", title: "Standards-led mapping", text: "Message structure, validation and format mapping" },
-        { icon: "globe", title: "Multi-region review", text: "Clearing-flow review across three regions" }
-      ],
-      facts: [
-        { label: "Domain", value: "Payments" },
-        { label: "Reach", value: "Three regions" },
-        { label: "Focus", value: "Connectivity" }
-      ],
-      steps: [
-        { icon: "payment", text: "Intake" },
+        { icon: "flow", text: "Integrate" },
         { icon: "check", text: "Validate" },
-        { icon: "flow", text: "Map format" },
-        { icon: "globe", text: "Clearing review" }
+        { icon: "chart", text: "Automate" }
       ],
       cards: [
-        { icon: "payment", title: "Messaging", text: "Payment-message structure across regional paths." },
-        { icon: "check", title: "Data quality", text: "Validation and format-mapping checkpoints." },
-        { icon: "globe", title: "Clearing view", text: "End-to-end flow and exception handling." }
+        { icon: "flow", title: "Finance & supply chain", text: "ERP, procurement and supply-chain workflow automation across enterprise systems." },
+        { icon: "globe", title: "Payments & clearing", text: "ISO 20022 message structure, validation and cross-border clearing review." },
+        { icon: "scan", title: "Documents to ERP", text: "OCR-with-ML extraction turning scanned documents into structured ERP data." },
+        { icon: "data", title: "Data lake", text: "Structured and unstructured pipelines feeding analytics and forecasting." }
       ],
-      outcomes: ["Interoperability", "Validation gates", "Traceable review"]
+      outcomes: ["Automated workflows", "Cross-border interoperability", "Structured + unstructured insight"]
     },
     "mobile-app-development": {
       code: "APP",
-      category: "APP DEVELOPMENT",
-      title: "Mobile App Development",
-      summary: "An interactive web experience adapted into a mobile-ready app prepared for distribution.",
+      category: "INTERACTIVE APPS & GAMES",
+      title: "Interactive Apps & Games",
+      summary: "Interactive 3D web experiences and a physics-sandbox learning app adapted into offline-first, bilingual, store-ready mobile apps.",
       signs: [
-        { icon: "mobile", title: "Web → mobile", text: "Interactive web experience adapted for touch devices" },
-        { icon: "box", title: "Release readiness", text: "Packaging, assets, permissions and workflow" },
-        { icon: "layers", title: "Full-stack delivery", text: "Web and mobile engineering in one scope" }
+        { icon: "mobile", title: "3D web core", text: "Real-time 3D experiences with touch controls, HUD and offline play" },
+        { icon: "box", title: "Cross-platform build", text: "Single codebase packaged for iOS and Android, offline-first design" },
+        { icon: "globe", title: "Bilingual release", text: "Chinese and English UX with localised store assets and compliance-ready in-app purchase" }
       ],
       facts: [
-        { label: "Domain", value: "App development" },
-        { label: "Path", value: "Web → mobile" },
-        { label: "Goal", value: "Store readiness" }
+        { label: "Domain", value: "Games + education apps" },
+        { label: "Path", value: "Web → iOS / Android" },
+        { label: "Focus", value: "Offline-first UX" }
       ],
       steps: [
         { icon: "search", text: "Audit web" },
         { icon: "mobile", text: "Adapt touch" },
         { icon: "box", text: "Package" },
-        { icon: "check", text: "Validate" }
+        { icon: "globe", text: "Release" }
       ],
       cards: [
-        { icon: "mobile", title: "Touch UI adaptation", text: "Controls and layout adjusted for mobile interaction." },
-        { icon: "box", title: "Mobile packaging", text: "Web experience prepared as a distributable app." },
-        { icon: "doc", title: "Store readiness", text: "Assets, permissions and release-build workflow." }
+        { icon: "mobile", title: "Interactive 3D core", text: "Real-time 3D web experiences with HUD, touch controls and offline play." },
+        { icon: "spark", title: "Physics sandbox app", text: "K-12 physics learning app built cross-platform with an offline-first engine." },
+        { icon: "box", title: "Release engineering", text: "Packaging, bilingual assets, in-app purchase readiness and store submission." },
+        { icon: "check", title: "Quality gates", text: "Automated smoke tests and performance tuning for smooth mobile playback." }
       ],
-      outcomes: ["Reusable web core", "Mobile-ready UX", "Documented release"]
+      outcomes: ["Reusable 3D engine", "Offline-first apps", "Bilingual store-ready releases"]
     },
     "document-management-ocr-erp": {
       code: "DOC",
@@ -202,7 +176,10 @@
   var ALIASES = {
     "iga": "iga-pam",
     "pam": "iga-pam",
-    "retail-trading-grid": "global-logistics-grid"
+    "retail-trading-grid": "automation-data",
+    "global-logistics-grid": "automation-data",
+    "iso-20022": "automation-data",
+    "document-management-ocr-erp": "automation-data"
   };
 
   function render() {

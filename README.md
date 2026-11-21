@@ -1,6 +1,6 @@
 # Project Showcase
 
-Public project index for resume QR use. Scan the QR code on a resume to land here, then choose a project. All seven cards open a unified Project Detail page. Pages use project-level content.
+Public project index for resume QR use. Scan the QR code on a resume to land here, then choose a project. All five cards open a unified Project Detail page. Pages use project-level content.
 
 ## Live
 
@@ -14,7 +14,7 @@ Public project index for resume QR use. Scan the QR code on a resume to land her
 - `assets/` — index styles
 - `projects/flash-report/` — AI Executive Brief project (static, zero dependencies)
 - `projects/rag-stack/` — Governed RAG Stack project
-- `projects/scope/` — Project Detail pages for the remaining five projects (`?p=` selector)
+- `projects/scope/` — Project Detail pages for the remaining three projects (`?p=` selector)
 - `projects/flash-report/teams/` — Microsoft Teams app manifest, icons and Adaptive Card
 - `projects/flash-report/StarlightAIFlashReport-teams.zip` — sideload-ready Teams package
 - `qr/` — ready-to-print QR codes for a resume (`qr-index.png` / `qr-profile.png` → project index; `qr-flash-report.png` → direct Executive Brief detail)
