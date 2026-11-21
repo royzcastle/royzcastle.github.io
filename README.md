@@ -8,7 +8,7 @@ Public index of selected work for resume QR use. Scan the QR code on a resume to
 - AI Executive Brief: `/projects/flash-report/`
 - Governed Agentic Stack: `/projects/rag-stack/`
 - IAM, PAM & AI Identity Governance sandbox: `/projects/iga-pam/`
-- Hyperautomation & Control Blueprint: `/projects/automation/`
+- Hyperautomation & Control: `/projects/automation/`
 
 ## What is here
 
@@ -17,7 +17,7 @@ Public index of selected work for resume QR use. Scan the QR code on a resume to
 - `projects/flash-report/` — AI Executive Brief project (static, zero dependencies)
 - `projects/rag-stack/` — Governed Agentic Stack reference architecture (interactive, zero dependencies)
 - `projects/iga-pam/` — interactive IAM / PAM / AI-identity governance sandbox (four modules, zero dependencies)
-- `projects/automation/` — interactive hyperautomation & control blueprint (three modules, zero dependencies)
+- `projects/automation/` — interactive hyperautomation & control reference (three modules, zero dependencies)
 - `projects/flash-report/teams/` — Microsoft Teams app manifest, icons and Adaptive Card
 - `projects/flash-report/StarlightAIFlashReport-teams.zip` — sideload-ready Teams package
 - `qr/` — ready-to-print QR codes for a resume (`qr-index.png` / `qr-profile.png` → work index; `qr-flash-report.png` → direct Executive Brief)
