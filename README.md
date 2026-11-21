@@ -1,6 +1,6 @@
 # royzcastle.github.io
 
-Public, framework-level project index for resume use. Scan the QR code on a resume to land here, then choose a project. All eight cards open a project page: two interactive showcases and six framework-level scope pages.
+Public, framework-level project index for resume use. Scan the QR code on a resume to land here, then choose a project. All nine cards open a project page: two interactive showcases and seven framework-level scope pages.
 
 ## Live
 
@@ -14,7 +14,7 @@ Public, framework-level project index for resume use. Scan the QR code on a resu
 - `assets/` — index styles and preview image
 - `projects/flash-report/` — AI-enhanced executive brief (flash report) project (static, zero dependencies)
 - `projects/rag-stack/` — Governed RAG Stack showcase
-- `projects/scope/` — framework-level scope pages for the remaining six projects (`?p=` selector)
+- `projects/scope/` — framework-level scope pages for the remaining seven projects (`?p=` selector)
 - `projects/flash-report/teams/` — Microsoft Teams app manifest, icons and Adaptive Card
 - `projects/flash-report/StarlightAIFlashReport-teams.zip` — sideload-ready Teams package
 - `qr/` — ready-to-print QR codes for a resume (`qr-index.png` / `qr-profile.png` → project index; `qr-flash-report.png` → direct Executive Brief detail)

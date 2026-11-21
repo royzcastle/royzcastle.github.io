@@ -218,6 +218,50 @@
         "Clear audit trail from idea to conclusion"
       ]
     },
+    "document-management-ocr-erp": {
+      code: "DOC",
+      category: "DOCUMENT MANAGEMENT / OCR / ERP",
+      title: "Document Management & OCR-to-ERP",
+      summary: "Intelligent document processing that turns scanned documents into structured data for ERP workflows.",
+      facts: [
+        { label: "Domain", value: "Document management" },
+        { label: "Mode", value: "Scan → ERP" },
+        { label: "Focus", value: "Extraction & validation" },
+        { label: "Disclosure", value: "Anonymised" }
+      ],
+      scope: [
+        "Scanned document intake",
+        "OCR and structured data extraction",
+        "Validation and exception handling",
+        "ERP handoff and downstream processing"
+      ],
+      flow: ["Scan intake", "OCR extraction", "Validate data", "Post to ERP"],
+      layers: [
+        { title: "Capture", text: "Document intake described as a controlled entry point into a processing flow." },
+        { title: "Extraction", text: "Unstructured content converted into structured fields at a framework level." },
+        { title: "Validation", text: "Checkpoints and exception paths described without implementation detail." },
+        { title: "ERP integration", text: "Approved data handed off for downstream business processing." }
+      ],
+      controls: [
+        "Data-quality checks",
+        "Exception routing",
+        "Audit trail",
+        "Access control"
+      ],
+      phases: [
+        { title: "Map", text: "Identify document types and the downstream ERP steps that depend on them." },
+        { title: "Define", text: "Shape extraction, validation and exception rules at a framework level." },
+        { title: "Integrate", text: "Frame the handoff into ERP workflows and review responsibilities." },
+        { title: "Operate", text: "Establish monitoring and review routines for ongoing document processing." }
+      ],
+      outcomes: [
+        "Less manual keying",
+        "Faster document turnaround",
+        "More consistent data quality",
+        "Traceable processing from scan to ERP"
+      ]
+    }
+,
     "mobile-app-development": {
       code: "APP",
       category: "APP DEVELOPMENT",
