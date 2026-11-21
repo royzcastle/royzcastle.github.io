@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Project detail page by royzcastle — anonymised, framework-level view of selected work." />
-  <title>Project Detail · royzcastle</title>
+  <meta name="description" content="Project detail with operating flow, module coverage and outcomes." />
+  <title>Project Detail</title>
   <link rel="stylesheet" href="assets/scope.css" />
 </head>
 <body>
@@ -13,14 +13,10 @@
       <a class="back" href="../../index.html">← All projects</a>
       <div class="brand">
         <span class="mark">P</span>
-        <span><strong>Project Detail</strong><small>royzcastle · anonymised portfolio view</small></span>
+        <span><strong>Project Detail</strong><small id="projectCategoryTop">PROJECT</small></span>
       </div>
-      <span class="badge">ANONYMISED</span>
+      <span class="code-chip" id="projectCodeTop">P</span>
     </header>
-
-    <p class="notice-strip">
-      Reference architectures and governance frameworks using anonymized / synthetic examples for illustrative purposes.
-    </p>
 
     <main class="content">
       <section class="hero">
@@ -28,61 +24,61 @@
         <div class="hero-copy">
           <span class="eyebrow" id="projectCategory">PROJECT</span>
           <h1 id="projectTitle">Project detail</h1>
-          <p id="projectSummary">Framework-level summary.</p>
-          <p class="authority">18+ years engineering · hands-on ownership · regulated / cross-border delivery</p>
+          <p id="projectSummary">Project summary.</p>
         </div>
       </section>
 
-      <section class="signal-band">
-        <span class="band-label">EXPERT SIGNAL</span>
+      <section class="band-block">
+        <span class="band-label">PROJECT SIGNALS</span>
         <div class="signals" id="signals"></div>
       </section>
 
       <section class="facts" id="facts" aria-label="Project snapshot"></section>
 
-      <section class="section">
+      <section class="section" id="modulesSection" hidden>
         <div class="section-head">
-          <span class="kicker">01 / OPERATING FLOW</span>
-          <h2>How it worked</h2>
-          <p>Four steps. No implementation detail.</p>
+          <span class="kicker">01 / PROJECT MODULES</span>
+          <h2>Co-existing modules</h2>
         </div>
-        <div class="flow" id="flow"></div>
+        <div class="modules" id="modules"></div>
       </section>
 
       <section class="section band">
         <div class="section-head">
-          <span class="kicker">02 / WHAT I OWNED</span>
-          <h2>Depth of the work</h2>
-          <p>Three capability areas, framed at expert level.</p>
+          <span class="kicker" id="flowKicker">02 / OPERATING FLOW</span>
+          <h2>How it worked</h2>
         </div>
-        <div class="points" id="cards"></div>
+        <div class="flow" id="flow"></div>
       </section>
 
       <section class="section">
         <div class="section-head">
-          <span class="kicker">03 / OUTCOME</span>
+          <span class="kicker" id="depthKicker">03 / PROJECT DEPTH</span>
+          <h2>Capability depth</h2>
+        </div>
+        <div class="points" id="cards"></div>
+      </section>
+
+      <section class="section outcome-band">
+        <div class="section-head">
+          <span class="kicker" id="outcomeKicker">04 / OUTCOME</span>
           <h2>What it enabled</h2>
-          <p>Qualitative outcomes only — no client results or performance figures.</p>
         </div>
         <ul class="outcomes" id="outcomes"></ul>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="footer-main">
-        <a href="../../index.html">← All projects</a>
-        <span>Project detail · anonymised portfolio view</span>
-      </div>
-      <div class="scope-notice">
-        <strong>Confidentiality &amp; Scope Notice:</strong>
-        All architectures, governance frameworks, workflows, and use-case examples presented on this site are
-        <strong>conceptualized reference models</strong> developed to illustrate enterprise AI portfolio management,
-        solution design, and governance practices. No proprietary system designs, source code, internal documentation,
-        or confidential information belonging to any current or former employer are disclosed. All metrics,
-        visualizations, and sample outputs use <strong>synthetic or illustrative data</strong> for demonstration purposes
-        only. Views expressed here are solely my own and do not represent the positions or endorsements of any employer,
-        nor do they constitute financial, investment, or legal advice.
-      </div>
+      <a href="../../index.html">← All projects</a>
+      <details class="legal">
+        <summary>Scope notice</summary>
+        <div class="legal-body">
+          <strong>Confidentiality &amp; Scope Notice:</strong>
+          Project summaries are conceptualized reference models. No proprietary source code, internal documentation,
+          or confidential employer information is disclosed. Metrics and sample outputs are synthetic or illustrative.
+          Nothing here is financial, investment, or legal advice.
+        </div>
+      </details>
     </footer>
   </div>
 

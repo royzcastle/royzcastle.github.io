@@ -3,166 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Selected work by royzcastle — anonymised portfolio summaries across AI, identity, logistics, payments and document systems." />
-  <title>royzcastle · Selected Work</title>
+  <meta name="description" content="Project index across AI, identity, logistics, payments, app delivery and document automation." />
+  <title>Project Index</title>
   <link rel="stylesheet" href="assets/index.css" />
 </head>
 <body>
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h5M14 3v5h5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-2.9 8.3-7 10-4.1-1.7-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><path d="M12 12h9M17 12v4M20 12v3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-8 6 6 0 0 0-11.4 1.6A3.2 3.2 0 0 0 7 18z"/><path d="M9 22h6M12 18v4"/></symbol>
+    <symbol id="i-payment" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4M17 14h2"/></symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2M10 7h4"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5M14 3v5h5"/><path d="M4 21h16"/></symbol>
+  </svg>
+
   <div class="page">
-    <header class="hero">
-      <nav class="nav">
-        <a class="handle" href="https://github.com/royzcastle" target="_blank" rel="noopener">
-          <span class="dot"></span> royzcastle
-        </a>
-        <div class="nav-right">
-          <a href="https://github.com/royzcastle" target="_blank" rel="noopener">GitHub ↗</a>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <div class="mast-left">
+          <span class="mast-mark"><svg><use href="#i-grid"></use></svg></span>
+          <div>
+            <span class="mast-kicker">PROJECT INDEX</span>
+            <h1>Project records</h1>
+          </div>
         </div>
-      </nav>
-
-      <p class="notice-strip">
-        Reference architectures and governance frameworks using anonymized / synthetic examples for illustrative purposes.
-      </p>
-
+        <div class="mast-count"><strong>07</strong><span>PROJECTS</span></div>
+      </div>
+      <div class="domain-rail" aria-label="Project domains">
+        <span>AI</span><span>Identity</span><span>Logistics</span><span>Payments</span><span>Apps</span><span>Documents</span>
+      </div>
     </header>
 
     <main>
-      <section class="section projects">
-        <div class="section-head">
-          <span class="kicker">PROJECT INDEX</span>
-          <h2>Choose a project</h2>
-          <p>Every card opens a project detail page. No confidential or client-specific information is shown.</p>
-        </div>
-
+      <section class="projects">
         <div class="project-grid">
-          <a class="project-card" href="projects/flash-report/index.html">
-            <div class="thumb abstract">
-              <span class="thumb-code">EB</span>
-              <span class="thumb-tag">01 · EXECUTIVE REPORTING</span>
+          <a class="project-card tone-indigo" href="projects/flash-report/index.html">
+            <div class="card-visual">
+              <span class="card-index">01</span>
+              <svg class="card-icon"><use href="#i-brief"></use></svg>
+              <span class="card-code">EB</span>
             </div>
             <div class="card-body">
+              <div class="card-meta"><span>EXECUTIVE REPORTING</span><span class="card-arrow">↗</span></div>
               <h3>AI Executive Brief</h3>
               <p>A flash-report style executive snapshot for a leadership office.</p>
-              <div class="card-foot">
-                <span class="enter">Open project <b>→</b></span>
-                <span class="quick">Project detail</span>
-              </div>
+              <div class="card-signals"><span>Executive briefing</span><span>AI summary</span><span>Teams delivery</span></div>
+              <div class="card-foot"><span class="enter">Open project <b>→</b></span><span class="quick">Project detail</span></div>
             </div>
           </a>
 
-          <a class="project-card" href="projects/rag-stack/index.html">
-            <div class="thumb abstract">
-              <span class="thumb-code">CTRL</span>
-              <span class="thumb-tag">02 · CONTROLS &amp; COMPLIANCE</span>
+          <a class="project-card tone-blue" href="projects/rag-stack/index.html">
+            <div class="card-visual">
+              <span class="card-index">02</span>
+              <svg class="card-icon"><use href="#i-shield"></use></svg>
+              <span class="card-code">CTRL</span>
             </div>
             <div class="card-body">
+              <div class="card-meta"><span>CONTROLS &amp; COMPLIANCE</span><span class="card-arrow">↗</span></div>
               <h3>Governed RAG Stack</h3>
-              <p>An end-to-end knowledge workflow with governance, access control and compliance built in.</p>
-              <div class="card-foot">
-                <span class="enter">Open project <b>→</b></span>
-                <span class="quick">Project detail</span>
-              </div>
+              <p>End-to-end knowledge workflow with governance, access control and compliance built in.</p>
+              <div class="card-signals"><span>Controls by design</span><span>Access governance</span><span>Compliance evidence</span></div>
+              <div class="card-foot"><span class="enter">Open project <b>→</b></span><span class="quick">Project detail</span></div>
             </div>
           </a>
 
-          <a class="project-card summary" href="projects/scope/index.html?p=iga-pam">
-            <div class="thumb abstract">
-              <span class="thumb-code">IGA / PAM</span>
-              <span class="thumb-tag">03 · IDENTITY &amp; ACCESS</span>
+          <a class="project-card tone-violet" href="projects/scope/index.html?p=iga-pam">
+            <div class="card-visual">
+              <span class="card-index">03</span>
+              <svg class="card-icon"><use href="#i-key"></use></svg>
+              <span class="card-code">IGA / PAM</span>
             </div>
             <div class="card-body">
+              <div class="card-meta"><span>IDENTITY &amp; PRIVILEGED ACCESS</span><span class="card-arrow">↗</span></div>
               <h3>IGA &amp; PAM Delivery</h3>
-              <p>A product-standard delivery for identity governance and privileged access, enhanced with tailored AI support for high-volume, repetitive operations.</p>
-              <p class="scope-line">Scope covered identity lifecycle and access-review workflows, privileged access processes, and AI-assisted triage of routine operational tasks.</p>
-              <div class="card-foot">
-                <span class="enter">Open project <b>→</b></span>
-                <span class="quick">Project detail</span>
-              </div>
+              <p>Two modules in one project: lifecycle governance, renewal decisions, broad device access and recorded sessions.</p>
+              <div class="card-signals"><span>AD / JML</span><span>Device coverage</span><span>Workflow + recording</span></div>
+              <div class="card-foot"><span class="enter">Open project <b>→</b></span><span class="quick">Project detail</span></div>
             </div>
           </a>
 
-          <a class="project-card summary" href="projects/scope/index.html?p=retail-trading-grid">
-            <div class="thumb abstract">
-              <span class="thumb-code">GRID</span>
-              <span class="thumb-tag">04 · GLOBAL LOGISTICS / CLOUD / DATA</span>
+          <a class="project-card tone-cyan" href="projects/scope/index.html?p=global-logistics-grid">
+            <div class="card-visual">
+              <span class="card-index">04</span>
+              <svg class="card-icon"><use href="#i-cloud"></use></svg>
+              <span class="card-code">GRID</span>
             </div>
             <div class="card-body">
+              <div class="card-meta"><span>GLOBAL LOGISTICS / CLOUD / DATA</span><span class="card-arrow">↗</span></div>
               <h3>Global Logistics Cloud Grid</h3>
-              <p>A cloud and data integration platform connecting buyers and sellers across a global logistics network.</p>
-              <p class="scope-line">Scope covered large-scale connectivity, partner onboarding, data exchange and operational monitoring across a distributed logistics ecosystem.</p>
-              <div class="card-foot">
-                <span class="enter">Open project <b>→</b></span>
-                <span class="quick">Project detail</span>
-              </div>
+              <p>Cloud and data integration for a global logistics network connecting distributed buyers and sellers.</p>
+              <div class="card-signals"><span>Cloud integration</span><span>Data exchange</span><span>Monitoring</span></div>
+              <div class="card-foot"><span class="enter">Open project <b>→</b></span><span class="quick">Project detail</span></div>
             </div>
           </a>
 
-          <a class="project-card summary" href="projects/scope/index.html?p=iso-20022">
-            <div class="thumb abstract">
-              <span class="thumb-code">20022</span>
-              <span class="thumb-tag">05 · PAYMENTS</span>
+          <a class="project-card tone-amber" href="projects/scope/index.html?p=iso-20022">
+            <div class="card-visual">
+              <span class="card-index">05</span>
+              <svg class="card-icon"><use href="#i-payment"></use></svg>
+              <span class="card-code">20022</span>
             </div>
             <div class="card-body">
+              <div class="card-meta"><span>PAYMENTS</span><span class="card-arrow">↗</span></div>
               <h3>ISO 20022 Payments</h3>
-              <p>A Southeast Asia payments connectivity project involving ISO 20022, with clearing flows spanning the Americas and China.</p>
-              <p class="scope-line">Scope covered cross-border payment-message structure, data validation, format mapping and end-to-end clearing-flow review across the three regions.</p>
-              <div class="card-foot">
-                <span class="enter">Open project <b>→</b></span>
-                <span class="quick">Project detail</span>
-              </div>
+              <p>Southeast Asia payments connectivity with clearing flows across the Americas and China.</p>
+              <div class="card-signals"><span>ISO 20022</span><span>Clearing</span><span>Validation</span></div>
+              <div class="card-foot"><span class="enter">Open project <b>→</b></span><span class="quick">Project detail</span></div>
             </div>
           </a>
 
-          <a class="project-card summary" href="projects/scope/index.html?p=mobile-app-development">
-            <div class="thumb abstract">
-              <span class="thumb-code">APP</span>
-              <span class="thumb-tag">06 · APP DEVELOPMENT</span>
+          <a class="project-card tone-rose" href="projects/scope/index.html?p=mobile-app-development">
+            <div class="card-visual">
+              <span class="card-index">06</span>
+              <svg class="card-icon"><use href="#i-mobile"></use></svg>
+              <span class="card-code">APP</span>
             </div>
             <div class="card-body">
+              <div class="card-meta"><span>APP DEVELOPMENT</span><span class="card-arrow">↗</span></div>
               <h3>Mobile App Development</h3>
-              <p>Turning an interactive web experience into a mobile-ready app prepared for distribution.</p>
-              <p class="scope-line">Scope covered touch UI adaptation, mobile packaging, store assets, release build flow and publishing readiness.</p>
-              <div class="card-foot">
-                <span class="enter">Open project <b>→</b></span>
-                <span class="quick">Project detail</span>
-              </div>
+              <p>Web-to-mobile delivery with touch UI, packaging, store assets and release workflow.</p>
+              <div class="card-signals"><span>Touch UI</span><span>Packaging</span><span>Store readiness</span></div>
+              <div class="card-foot"><span class="enter">Open project <b>→</b></span><span class="quick">Project detail</span></div>
             </div>
           </a>
 
-          <a class="project-card summary" href="projects/scope/index.html?p=document-management-ocr-erp">
-            <div class="thumb abstract">
-              <span class="thumb-code">DOC</span>
-              <span class="thumb-tag">07 · DOCUMENT MANAGEMENT / OCR / ERP</span>
+          <a class="project-card tone-green" href="projects/scope/index.html?p=document-management-ocr-erp">
+            <div class="card-visual">
+              <span class="card-index">07</span>
+              <svg class="card-icon"><use href="#i-doc"></use></svg>
+              <span class="card-code">DOC</span>
             </div>
             <div class="card-body">
+              <div class="card-meta"><span>DOCUMENT MANAGEMENT / OCR / ERP</span><span class="card-arrow">↗</span></div>
               <h3>Document Management &amp; OCR-to-ERP</h3>
-              <p>Intelligent document processing that turns scanned documents into structured data for ERP workflows.</p>
-              <p class="scope-line">Scope covered OCR extraction, data validation, exception handling and ERP handoff for document-heavy operations.</p>
-              <div class="card-foot">
-                <span class="enter">Open project <b>→</b></span>
-                <span class="quick">Project detail</span>
-              </div>
+              <p>Scan → OCR → validation → ERP handoff for document-heavy operations.</p>
+              <div class="card-signals"><span>OCR extraction</span><span>Validation</span><span>ERP handoff</span></div>
+              <div class="card-foot"><span class="enter">Open project <b>→</b></span><span class="quick">Project detail</span></div>
             </div>
           </a>
         </div>
       </section>
-
     </main>
 
     <footer class="footer">
-      <div class="footer-main">
-        <div><strong>royzcastle</strong><span> · AI, identity, logistics, payment and document systems · anonymised portfolio summaries</span></div>
-        <a href="https://github.com/royzcastle" target="_blank" rel="noopener">github.com/royzcastle ↗</a>
-      </div>
-      <div class="scope-notice">
-        <strong>Confidentiality &amp; Scope Notice:</strong>
-        All architectures, governance frameworks, workflows, and use-case examples presented on this site are
-        <strong>conceptualized reference models</strong> developed to illustrate enterprise AI portfolio management,
-        solution design, and governance practices. No proprietary system designs, source code, internal documentation,
-        or confidential information belonging to any current or former employer are disclosed. All metrics,
-        visualizations, and sample outputs use <strong>synthetic or illustrative data</strong> for demonstration purposes
-        only. Views expressed here are solely my own and do not represent the positions or endorsements of any employer,
-        nor do they constitute financial, investment, or legal advice.
-      </div>
+      <details class="legal">
+        <summary>Scope notice</summary>
+        <div class="legal-body">
+          <strong>Confidentiality &amp; Scope Notice:</strong>
+          Project summaries are conceptualized reference models. No proprietary source code, internal documentation,
+          or confidential employer information is disclosed. Metrics and sample outputs are synthetic or illustrative.
+          Nothing here is financial, investment, or legal advice.
+        </div>
+      </details>
     </footer>
   </div>
 </body>
