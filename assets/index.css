@@ -107,6 +107,7 @@ h1 span { color: #93c5fd; }
 .card-body { padding: 20px 21px 21px; }
 .card-body h3 { margin: 0 0 8px; font-size: 19px; }
 .card-body p { margin: 0 0 15px; font-size: 13px; color: var(--ink2); line-height: 1.7; }
+.card-body p.scope-line { margin-top: -6px; font-size: 12px; color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
 .tags span { font-size: 10.5px; padding: 4px 9px; border-radius: 999px; background: #eef2ff; color: #3730a3; border: 1px solid #dde4ff; }
 .card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 14px; border-top: 1px solid var(--line); }

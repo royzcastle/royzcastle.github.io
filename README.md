@@ -1,6 +1,6 @@
 # royzcastle.github.io
 
-Public, framework-level project index for resume use. Scan the QR code on a resume to land here, then choose a project. Two projects have detail pages; the remaining six are anonymised scope summaries only.
+Public, framework-level project index for resume use. Scan the QR code on a resume to land here, then choose a project. Two projects have detail pages; the remaining five are anonymised scope summaries only.
 
 ## Live
 
