@@ -115,8 +115,6 @@ h1 span { color: #93c5fd; }
 .enter b { font-size: 16px; }
 .request { font-size: 13px; font-weight: 700; color: var(--muted); }
 .quick { font-size: 10.5px; color: var(--muted); }
-.project-card.summary { cursor: default; }
-.project-card.summary:hover { transform: none; box-shadow: 0 6px 20px rgba(15,23,42,.04); border-color: var(--line); }
 
 .note-inner { max-width: 760px; }
 .note-inner p { margin: 10px 0 0; font-size: 13.5px; color: var(--ink2); line-height: 1.8; }
