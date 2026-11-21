@@ -115,62 +115,6 @@
       ],
       outcomes: ["Interoperability", "Validation gates", "Traceable review"]
     },
-    "web3-nft-mm": {
-      code: "WEB3",
-      category: "CYBER / BLOCKCHAIN / DIGITAL ASSETS",
-      title: "Cyber, Blockchain & Digital Assets",
-      summary: "Personal work across cyber, blockchain and digital assets, from on-chain research to automated market making.",
-      signals: [
-        { icon: "chain", title: "Hands-on operator", text: "Ran market making, not only research" },
-        { icon: "search", title: "On-chain research", text: "Protocols, wallet flows and liquidity depth" },
-        { icon: "bolt", title: "Volatility experience", text: "Two-sided quoting and inventory discipline" }
-      ],
-      facts: [
-        { label: "Domain", value: "Cyber & blockchain" },
-        { label: "Assets", value: "NFT & digital assets" },
-        { label: "Mode", value: "Personal R&D" }
-      ],
-      steps: [
-        { icon: "search", text: "Research" },
-        { icon: "box", text: "Prototype" },
-        { icon: "chain", text: "On-chain test" },
-        { icon: "chart", text: "Review" }
-      ],
-      cards: [
-        { icon: "search", title: "On-chain research", text: "Protocol, flow and liquidity-depth exploration." },
-        { icon: "box", title: "Digital assets", text: "NFT minting and marketplace flows at framework level." },
-        { icon: "chart", title: "Market making", text: "Liquidity and quoting workflows with performance review." }
-      ],
-      outcomes: ["Fast idea-to-test", "Hands-on blockchain", "Risk-aware iteration"]
-    },
-    "programmatic-trading": {
-      code: "ALGO",
-      category: "DATA-DRIVEN / EVENT-DRIVEN ALGORITHMS",
-      title: "Algorithmic Trading Research",
-      summary: "Research-led algorithmic trading across Hong Kong and US equities — data-driven, event-driven and iteratively refined.",
-      signals: [
-        { icon: "chart", title: "Full research loop", text: "Data ingestion → event detection → backtest → execution" },
-        { icon: "event", title: "Event-driven", text: "Earnings, filings, guidance and macro releases" },
-        { icon: "flow", title: "HK → US port", text: "Rebuilt a Hong Kong system for US equities" }
-      ],
-      facts: [
-        { label: "Markets", value: "HK / US equities" },
-        { label: "Logic", value: "Data + events" },
-        { label: "Method", value: "Iterative research" }
-      ],
-      steps: [
-        { icon: "spark", text: "Hypothesis" },
-        { icon: "event", text: "Event inputs" },
-        { icon: "chart", text: "Backtest" },
-        { icon: "check", text: "Review" }
-      ],
-      cards: [
-        { icon: "event", title: "Event detection", text: "Earnings, filings, guidance and macro-release research." },
-        { icon: "chart", title: "Backtesting discipline", text: "Simulated records, robustness and overfitting control." },
-        { icon: "flow", title: "Iterative refinement", text: "Position sizing, attribution and post-trade review." }
-      ],
-      outcomes: ["Reproducible research", "Risk-first interpretation", "Clear audit trail"]
-    },
     "document-management-ocr-erp": {
       code: "DOC",
       category: "DOCUMENT MANAGEMENT / OCR / ERP",
@@ -237,8 +181,12 @@
 
   function render() {
     var key = new URLSearchParams(window.location.search).get("p") || "iga-pam";
-    var p = PROJECTS[key] || PROJECTS["iga-pam"];
-    document.title = p.title + " · Scope · royzcastle";
+    if (!PROJECTS[key]) {
+      window.location.replace("../../index.html");
+      return;
+    }
+    var p = PROJECTS[key];
+    document.title = p.title + " · Project Detail · royzcastle";
 
     document.getElementById("projectCode").textContent = p.code;
     document.getElementById("projectCategory").textContent = p.category;
