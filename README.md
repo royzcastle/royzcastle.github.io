@@ -12,7 +12,7 @@ Public, framework-level project index for resume use. Scan the QR code on a resu
 
 - `index.html` — project index / resume landing page
 - `assets/` — index styles and preview image
-- `projects/flash-report/` — AI-enhanced executive brief (flash report) POC (static, zero dependencies)
+- `projects/flash-report/` — AI-enhanced executive brief (flash report) project (static, zero dependencies)
 - `projects/rag-stack/` — Governed RAG Stack showcase
 - `projects/scope/` — framework-level scope pages for the remaining six projects (`?p=` selector)
 - `projects/flash-report/teams/` — Microsoft Teams app manifest, icons and Adaptive Card
