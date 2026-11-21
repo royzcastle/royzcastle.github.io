@@ -40,9 +40,9 @@
     },
     "web3-nft-mm": {
       code: "WEB3",
-      category: "TRADING & WEB3",
-      title: "Web3, NFT & Market Making",
-      summary: "Personal work across decentralised applications, NFT initiatives and market-making operations on centralised crypto exchanges.",
+      category: "CYBER / BLOCKCHAIN / DIGITAL ASSETS",
+      title: "Cyber, Blockchain & Digital Assets",
+      summary: "Personal work across cyber and blockchain-oriented digital assets, including NFTs and automated market making.",
       scope: [
         "Prototype design and on-chain interactions",
         "NFT minting and marketplace flows",
@@ -51,15 +51,27 @@
       ]
     },
     "programmatic-trading": {
-      code: "API",
-      category: "TRADING & WEB3",
-      title: "Programmatic Trading",
-      summary: "Programmatic equity trading across Hong Kong and US markets using brokerage APIs.",
+      code: "ALGO",
+      category: "RESEARCH-LED TRADING",
+      title: "Research-Led Algorithmic Trading",
+      summary: "Research-led work in automated and algorithmic trading across Hong Kong and US equity markets.",
       scope: [
-        "Market data handling",
-        "Order execution",
-        "Strategy testing",
-        "Operational risk checks"
+        "Hypothesis development and backtesting",
+        "Simulated trade-record analysis",
+        "Robustness and overfitting checks",
+        "Risk attribution and review"
+      ]
+    },
+"mobile-app-development": {
+      code: "APP",
+      category: "APP DEVELOPMENT",
+      title: "Mobile App Development",
+      summary: "Turning an interactive web experience into a mobile-ready app prepared for distribution.",
+      scope: [
+        "Touch UI adaptation",
+        "Mobile packaging",
+        "Store assets and publishing readiness",
+        "Release build workflow"
       ]
     }
   };
