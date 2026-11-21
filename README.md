@@ -1,6 +1,6 @@
 # Selected Showcases
 
-Public index of selected showcases for resume QR use. Scan the QR code on a resume to land here, then choose an area to explore. All four cards lead to interactive views with anonymised, framework-level content.
+Public index of Selected Showcases for resume QR use. Scan the QR code on a resume to land here, then choose an area to explore. All four cards lead to interactive views with anonymised, framework-level content.
 
 ## Live
 
