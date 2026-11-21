@@ -1,6 +1,6 @@
 /* ============================================================
  * data.js — Mock Data Adapter (English)
- * Use case: Macau casino Integrated Resort — CEO Office flash report
+ * Use case: Macau casino Integrated Resort — CEO Office executive brief
  * -------------------------------------------------------------
  * POC uses sample data. For production, replace fetchSnapshot()
  * with a real API / warehouse query — no UI changes required.
@@ -12,7 +12,7 @@
   const SNAPSHOT = {
     meta: {
       company: "Starlight Macau Integrated Resort",
-      title: "Daily Executive Flash",
+      title: "Daily Executive Brief",
       asOf: "21 Nov 2026, 08:30 (GMT+8)",
       period: "MTD (01-21 Nov)",
       currency: "MOP",

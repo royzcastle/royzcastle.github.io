@@ -11,12 +11,12 @@
     "termsOfUseUrl": "https://royzcastle.github.io/terms"
   },
   "name": {
-    "short": "AI Flash Report",
-    "full": "AI Flash Report — CEO Office"
+    "short": "AI Executive Brief",
+    "full": "AI Executive Brief — CEO Office"
   },
   "description": {
-    "short": "AI-enhanced daily executive flash for the integrated resort",
-    "full": "A one-page AI-enhanced executive flash report for the CEO Office of Starlight Macau Integrated Resort. Shows GGR, mass table GGR, VIP rolling volume, non-gaming revenue, hotel occupancy and ADR, plus an AI briefing, anomaly insights and natural-language Q&A. Embeddable as a personal or channel tab in Microsoft Teams."
+    "short": "AI-enhanced daily executive brief for the integrated resort",
+    "full": "A one-page AI-enhanced executive brief for the CEO Office of Starlight Macau Integrated Resort. Shows GGR, mass table GGR, VIP rolling volume, non-gaming revenue, hotel occupancy and ADR, plus an AI briefing, anomaly insights and natural-language Q&A. Also known as a flash report. Embeddable as a personal or channel tab in Microsoft Teams."
   },
   "icons": {
     "color": "color.png",
@@ -26,19 +26,28 @@
   "staticTabs": [
     {
       "entityId": "flash-personal",
-      "name": "Flash Report",
+      "name": "Executive Brief",
       "contentUrl": "https://royzcastle.github.io/projects/flash-report/index.html",
       "websiteUrl": "https://royzcastle.github.io/projects/flash-report/index.html",
-      "scopes": ["personal"]
+      "scopes": [
+        "personal"
+      ]
     },
     {
       "entityId": "flash-channel",
-      "name": "Flash Report",
+      "name": "Executive Brief",
       "contentUrl": "https://royzcastle.github.io/projects/flash-report/index.html",
       "websiteUrl": "https://royzcastle.github.io/projects/flash-report/index.html",
-      "scopes": ["team", "groupChat"]
+      "scopes": [
+        "team",
+        "groupChat"
+      ]
     }
   ],
-  "permissions": ["identity"],
-  "validDomains": ["royzcastle.github.io"]
+  "permissions": [
+    "identity"
+  ],
+  "validDomains": [
+    "royzcastle.github.io"
+  ]
 }
