@@ -108,63 +108,7 @@
       ],
       outcomes: ["Automated workflows", "Cross-border interoperability", "Structured + unstructured insight"]
     },
-    "mobile-app-development": {
-      code: "APP",
-      category: "INTERACTIVE APPS & GAMES",
-      title: "Interactive Apps & Games",
-      summary: "Interactive 3D web experiences and a physics-sandbox learning app adapted into offline-first, bilingual, store-ready mobile apps.",
-      signs: [
-        { icon: "mobile", title: "3D web core", text: "Real-time 3D experiences with touch controls, HUD and offline play" },
-        { icon: "box", title: "Cross-platform build", text: "Single codebase packaged for iOS and Android, offline-first design" },
-        { icon: "globe", title: "Bilingual release", text: "Chinese and English UX with localised store assets and compliance-ready in-app purchase" }
-      ],
-      facts: [
-        { label: "Domain", value: "Games + education apps" },
-        { label: "Path", value: "Web → iOS / Android" },
-        { label: "Focus", value: "Offline-first UX" }
-      ],
-      steps: [
-        { icon: "search", text: "Audit web" },
-        { icon: "mobile", text: "Adapt touch" },
-        { icon: "box", text: "Package" },
-        { icon: "globe", text: "Release" }
-      ],
-      cards: [
-        { icon: "mobile", title: "Interactive 3D core", text: "Real-time 3D web experiences with HUD, touch controls and offline play." },
-        { icon: "spark", title: "Physics sandbox app", text: "K-12 physics learning app built cross-platform with an offline-first engine." },
-        { icon: "box", title: "Release engineering", text: "Packaging, bilingual assets, in-app purchase readiness and store submission." },
-        { icon: "check", title: "Quality gates", text: "Automated smoke tests and performance tuning for smooth mobile playback." }
-      ],
-      outcomes: ["Reusable 3D engine", "Offline-first apps", "Bilingual store-ready releases"]
-    },
-    "document-management-ocr-erp": {
-      code: "DOC",
-      category: "DOCUMENT MANAGEMENT / OCR / ERP",
-      title: "Document Management & OCR-to-ERP",
-      summary: "Intelligent document processing that turns scanned documents into structured data for ERP workflows.",
-      signs: [
-        { icon: "scan", title: "Scan → ERP", text: "Document-heavy workflow automation" },
-        { icon: "doc", title: "Unstructured data", text: "OCR extraction into structured fields" },
-        { icon: "flow", title: "Enterprise process", text: "ERP handoff for downstream processing" }
-      ],
-      facts: [
-        { label: "Domain", value: "Document management" },
-        { label: "Path", value: "Scan → ERP" },
-        { label: "Focus", value: "Extraction + validation" }
-      ],
-      steps: [
-        { icon: "scan", text: "Scan intake" },
-        { icon: "doc", text: "OCR extraction" },
-        { icon: "check", text: "Validate" },
-        { icon: "data", text: "ERP" }
-      ],
-      cards: [
-        { icon: "scan", title: "Capture & extraction", text: "Scanned content converted into structured fields." },
-        { icon: "check", title: "Validation & exceptions", text: "Quality gates and clear exception routing." },
-        { icon: "data", title: "ERP handoff", text: "Approved data passed into downstream processing." }
-      ],
-      outcomes: ["Less manual keying", "Consistent data quality", "Traceable processing"]
-    }
+
   };
 
   function esc(s) {
@@ -191,6 +135,10 @@
     }
     if (key === "automation-data") {
       window.location.replace("../automation/index.html");
+      return;
+    }
+    if (key === "mobile-app-development") {
+      window.location.replace("../../index.html");
       return;
     }
     if (!PROJECTS[key]) {
