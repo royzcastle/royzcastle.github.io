@@ -168,16 +168,21 @@
     renderPocContext(s.context);
     renderPocGuard(s.guard);
     renderPocTrace(s.trace);
+    activateTab("guard");
   }
   document.getElementById("pocRun").addEventListener("click", runPoc);
   pocScenario.addEventListener("change", function () { pocQuestion.value = POC[this.value].question; });
+  function activateTab(name) {
+    document.querySelectorAll(".tab").forEach(function (t) {
+      t.classList.toggle("is-active", t.getAttribute("data-tab") === name);
+    });
+    ["Context", "Guard", "Trace"].forEach(function (n) {
+      document.getElementById("tab" + n).classList.toggle("hidden", n.toLowerCase() !== name);
+    });
+  }
   document.querySelectorAll(".tab").forEach(function (tab) {
     tab.addEventListener("click", function () {
-      document.querySelectorAll(".tab").forEach(function (t) { t.classList.remove("is-active"); });
-      tab.classList.add("is-active");
-      ["Context", "Guard", "Trace"].forEach(function (n) {
-        document.getElementById("tab" + n).classList.toggle("hidden", n.toLowerCase() !== tab.getAttribute("data-tab"));
-      });
+      activateTab(tab.getAttribute("data-tab"));
     });
   });
 
