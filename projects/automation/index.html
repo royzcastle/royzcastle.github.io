@@ -124,6 +124,40 @@
           <div class="dom-evidence">Cross-border routing · clearing-flow review · exception handling · partner coordination</div>
         </div>
       </div>
+
+      <div class="fsi-band">
+        <div class="fsi-head">
+          <span class="mod-kicker">FINANCIAL SERVICES · CONTROL-EMBEDDED SCENARIOS</span>
+          <h3>FSI automation, with the control built in</h3>
+          <p>Representative financial-services scenarios shown at framework level. All institutions and data are fictional.</p>
+        </div>
+        <div class="fsi-grid">
+          <div class="fsi-card">
+            <span class="fsi-tag">RISK &amp; COMPLIANCE</span>
+            <h4>Regulatory reporting</h4>
+            <p>Automated collection, validation and reconciliation of regulatory submissions from multiple source systems.</p>
+            <div class="fsi-control">Control: validation gates · sign-off trail · report reproducibility</div>
+          </div>
+          <div class="fsi-card">
+            <span class="fsi-tag">FINANCIAL CRIME</span>
+            <h4>AML / sanctions screening support</h4>
+            <p>Case-file preparation, document extraction and exception routing for alert triage — with analysts retaining the decision.</p>
+            <div class="fsi-control">Control: human adjudication · evidence retention · audit lineage</div>
+          </div>
+          <div class="fsi-card">
+            <span class="fsi-tag">ASSET MANAGEMENT</span>
+            <h4>Internal order control</h4>
+            <p>Order files captured from documents, validated against policy rules and routed for approval before downstream processing.</p>
+            <div class="fsi-control">Control: policy validation · maker–checker · exception log</div>
+          </div>
+          <div class="fsi-card">
+            <span class="fsi-tag">PAYMENTS / SETTLEMENT</span>
+            <h4>Payment &amp; clearing review</h4>
+            <p>Structured message validation, format mapping and clearing-flow review across regional payment paths.</p>
+            <div class="fsi-control">Control: data validation · idempotency · reconciliation</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============ MODULE 3: PIPELINE SIMULATOR ============ -->
@@ -147,6 +181,7 @@
           <button class="input-btn is-active" data-doc="structured"><span>▤</span> Structured B2B message</button>
           <button class="input-btn" data-doc="invoice"><span>▧</span> Supplier PDF invoice</button>
           <button class="input-btn" data-doc="anomaly"><span>!</span> Anomalous document</button>
+          <button class="input-btn" data-doc="fsi"><span>◆</span> FSI trade confirmation</button>
         </div>
 
         <div class="gates" id="gates">
@@ -205,6 +240,16 @@
           <h3>Observability &amp; audit lineage</h3>
           <p>Every trigger, model version, rule hit and human override recorded as a traceable lineage.</p>
           <div class="ctrl-evidence"><b>Evidence</b> Trace log + replayable audit trail</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><h3>FSI governance overlay</h3><p>Additional control dimensions applied when automation runs in a regulated financial environment.</p></div></div>
+        <div class="gov-grid">
+          <div class="gov-item"><b>Data classification &amp; retention</b><span>Sensitivity labels, retention period and cross-border handling defined before automation touches the data.</span></div>
+          <div class="gov-item"><b>Model risk awareness</b><span>Model version, purpose and known limitations recorded; high-impact decisions stay deterministic or human-reviewed.</span></div>
+          <div class="gov-item"><b>Third-party &amp; vendor risk</b><span>External services and pipelines assessed for access scope, data exposure and continuity obligations.</span></div>
+          <div class="gov-item"><b>Audit &amp; regulatory evidence</b><span>Approvals, overrides, rule hits and exceptions retained as replayable evidence for review.</span></div>
         </div>
       </div>
     </section>

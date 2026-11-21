@@ -125,6 +125,15 @@
       route: "stp",
       result: "<b>STP with evidence.</b> Extracted fields passed confidence threshold, matched to PO and receipt, then posted with extraction confidence and model version recorded."
     },
+    fsi: {
+      label: "FSI trade confirmation",
+      confidence: 88,
+      fields: [["Trade ref", "TRD-88210 (extracted)"], ["Notional", "2,400,000.00"], ["Counterparty", "CP-3391 (matched)"]],
+      match: true,
+      anomaly: false,
+      route: "workflow",
+      result: "<b>Routed to maker–checker review.</b> FSI control: amount above auto-post limit, so straight-through posting is blocked. A risk-highlighted approval task with source evidence is sent to the checker; approval and override are recorded in the audit trail."
+    },
     anomaly: {
       label: "Anomalous document",
       confidence: 71,
