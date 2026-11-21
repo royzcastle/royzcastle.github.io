@@ -4,7 +4,7 @@
   const PROJECTS = {
     "iga-pam": {
       code: "IGA / PAM",
-      category: "ENTERPRISE / CLIENT WORK · IDENTITY & ACCESS",
+      category: "IDENTITY & ACCESS",
       title: "IGA & PAM Delivery",
       summary: "A product-standard POC for identity governance and privileged access, with tailored AI improvement to support high-volume, repetitive operations.",
       scope: [
@@ -16,7 +16,7 @@
     },
     "retail-trading-grid": {
       code: "GRID",
-      category: "ENTERPRISE / CLIENT WORK · RETAIL TRADING",
+      category: "RETAIL TRADING",
       title: "Retail Trading Grid",
       summary: "A cloud integration platform connecting thousands of buyers and sellers across a retail trading ecosystem.",
       scope: [
@@ -28,7 +28,7 @@
     },
     "iso-20022": {
       code: "20022",
-      category: "ENTERPRISE / CLIENT WORK · PAYMENTS",
+      category: "PAYMENTS",
       title: "ISO 20022 Payments",
       summary: "A Southeast Asia payments connectivity project involving ISO 20022, with clearing flows spanning the Americas and China.",
       scope: [
@@ -40,7 +40,7 @@
     },
     "web3-nft-mm": {
       code: "WEB3",
-      category: "PERSONAL / TRADING & WEB3",
+      category: "TRADING & WEB3",
       title: "Web3, NFT & Market Making",
       summary: "Personal work across decentralised applications, NFT initiatives and market-making operations on centralised crypto exchanges.",
       scope: [
@@ -52,7 +52,7 @@
     },
     "programmatic-trading": {
       code: "API",
-      category: "PERSONAL / TRADING & WEB3",
+      category: "TRADING & WEB3",
       title: "Programmatic Trading",
       summary: "Programmatic equity trading across Hong Kong and US markets using brokerage APIs.",
       scope: [
