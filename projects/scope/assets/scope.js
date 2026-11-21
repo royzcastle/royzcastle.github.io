@@ -198,7 +198,7 @@
       return;
     }
     var p = PROJECTS[key];
-    document.title = p.title + " · Project Detail";
+    document.title = p.title + " · Interactive view";
 
     document.getElementById("projectCode").textContent = p.code;
     document.getElementById("projectCodeTop").textContent = p.code;
