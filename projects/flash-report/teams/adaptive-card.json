@@ -1,0 +1,107 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "AI FLASH REPORT",
+              "weight": "Bolder",
+              "size": "Small",
+              "color": "Accent",
+              "spacing": "None"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Starlight Macau Integrated Resort",
+              "weight": "Bolder",
+              "size": "Medium",
+              "wrap": true,
+              "spacing": "Small"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "21 Nov 2026",
+              "size": "Small",
+              "color": "Muted",
+              "horizontalAlignment": "Right"
+            },
+            {
+              "type": "TextBlock",
+              "text": "08:30 GMT+8",
+              "size": "Small",
+              "color": "Muted",
+              "horizontalAlignment": "Right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Mass and non-gaming drive growth; VIP deceleration needs watching",
+      "weight": "Bolder",
+      "size": "Large",
+      "wrap": true,
+      "spacing": "Medium"
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        { "title": "GGR", "value": "MOP 2.86B · +14.2% YoY" },
+        { "title": "Mass table GGR", "value": "MOP 1.24B · +19.6% YoY" },
+        { "title": "VIP rolling", "value": "MOP 18.2B · +8.5% YoY" },
+        { "title": "Non-gaming", "value": "MOP 680M · +22.1% YoY" },
+        { "title": "Occupancy / ADR", "value": "94.8% / MOP 2,180" }
+      ],
+      "spacing": "Medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "**AI highlights**\n- Monthly target achieved at 106%; mass and non-gaming are the growth engines.\n- Hotel occupancy and mass ADT both hit new highs.\n- VIP growth of 8.5% lags mass at 19.6% — weekly review recommended.",
+      "wrap": true,
+      "spacing": "Medium"
+    },
+    {
+      "type": "Container",
+      "style": "attention",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Watch: top 10 VIPs contribute 62% of rolling volume (alert line 55%), and VIP win rate of 2.85% is below the 3-month average.",
+          "wrap": true,
+          "weight": "Bolder"
+        }
+      ],
+      "spacing": "Medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "AI-generated content is indicative only — confirm with official financial data.",
+      "size": "Small",
+      "color": "Muted",
+      "wrap": true,
+      "spacing": "Medium"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "Open full report",
+      "url": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html"
+    }
+  ]
+}

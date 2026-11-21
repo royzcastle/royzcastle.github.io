@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <title>AI Flash Report | CEO Office | Starlight Macau IR</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ============ Top bar ============ -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 20h18M5 20V9l7-5 7 5v11M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">
+            Flash Report
+            <span class="brand-badge">CEO OFFICE</span>
+          </div>
+          <div class="brand-sub">Starlight Macau Integrated Resort · Daily Executive Flash</div>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="period-switch" role="group" aria-label="Period selector">
+          <button class="period-btn is-active" data-period="MTD">MTD</button>
+          <button class="period-btn" data-period="WTD">WTD</button>
+          <button class="period-btn" data-period="Today">Today</button>
+        </div>
+        <button class="icon-btn" id="refreshBtn" title="Reload data" aria-label="Reload data">
+          <svg viewBox="0 0 24 24" width="17" height="17"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="avatar" title="CEO Office">CO</div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ============ AI briefing ============ -->
+      <section class="briefing" aria-labelledby="briefHeadline">
+        <div class="briefing-top">
+          <span class="ai-chip">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z" fill="currentColor"/></svg>
+            AI BRIEFING
+          </span>
+          <span class="briefing-stamp">Data as of <strong id="asOf"></strong></span>
+          <button class="ghost-btn" id="regenBtn">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Regenerate
+          </button>
+        </div>
+
+        <h1 class="briefing-headline" id="briefHeadline"></h1>
+
+        <ul class="briefing-bullets" id="briefBullets"></ul>
+
+        <div class="briefing-focus" id="briefFocus"></div>
+
+        <div class="briefing-foot">
+          <div class="confidence">
+            <span>AI confidence</span>
+            <div class="confidence-track"><div class="confidence-fill" id="confidenceFill"></div></div>
+            <strong id="confidenceText"></strong>
+          </div>
+          <span class="model-tag" id="modelTag"></span>
+        </div>
+      </section>
+
+      <!-- ============ KPIs ============ -->
+      <section class="block" aria-labelledby="kpiTitle">
+        <div class="block-head">
+          <h2 id="kpiTitle">Key Metrics</h2>
+          <span class="block-note" id="periodNote"></span>
+        </div>
+        <div class="kpi-grid" id="kpiGrid"></div>
+      </section>
+
+      <!-- ============ Charts ============ -->
+      <div class="two-col">
+        <section class="card trend-card" aria-labelledby="trendTitle">
+          <div class="card-head">
+            <div>
+              <h2 id="trendTitle">Revenue Trend</h2>
+              <p class="card-sub">Last 12 months · MOP million</p>
+            </div>
+            <div class="legend" id="trendLegend"></div>
+          </div>
+          <div class="chart-wrap" id="trendChart"></div>
+        </section>
+
+        <section class="card donut-card" aria-labelledby="donutTitle">
+          <div class="card-head">
+            <div>
+              <h2 id="donutTitle">Revenue Mix</h2>
+              <p class="card-sub">Gaming vs. non-gaming split</p>
+            </div>
+          </div>
+          <div class="donut-wrap" id="donutChart"></div>
+          <div class="donut-legend" id="donutLegend"></div>
+        </section>
+      </div>
+
+      <!-- ============ AI insights + Ask AI ============ -->
+      <div class="two-col lower">
+        <section class="card insight-card" aria-labelledby="insightTitle">
+          <div class="card-head">
+            <div>
+              <h2 id="insightTitle">AI Insights · Needs Your Attention</h2>
+              <p class="card-sub">Auto-detected anomalies and opportunities</p>
+            </div>
+            <span class="count-badge" id="insightCount"></span>
+          </div>
+          <div class="insight-list" id="insightList"></div>
+        </section>
+
+        <section class="card ai-card" aria-labelledby="askTitle">
+          <div class="card-head">
+            <div>
+              <h2 id="askTitle">Ask AI</h2>
+              <p class="card-sub">Query this report in natural language</p>
+            </div>
+            <span class="ai-dot" aria-hidden="true"></span>
+          </div>
+          <div class="chat-log" id="chatLog" aria-live="polite"></div>
+          <div class="suggestions" id="suggestions">
+            <button class="suggestion" data-q="Why did GGR grow?">Why did GGR grow?</button>
+            <button class="suggestion" data-q="What are the VIP risks?">VIP risks</button>
+            <button class="suggestion" data-q="How is hotel occupancy?">Hotel occupancy</button>
+          </div>
+          <form class="qa-form" id="qaForm">
+            <input id="qaInput" type="text" autocomplete="off" placeholder="Ask a question, e.g. Why is mass revenue rising?" aria-label="Ask a question" />
+            <button type="submit" aria-label="Send question">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </section>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <span>Starlight Macau Integrated Resort · CEO Office · AI Flash Report (POC)</span>
+      <span>AI-generated content is indicative only — confirm with official financial data · Sample data</span>
+    </footer>
+  </div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

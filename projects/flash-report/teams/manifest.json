@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "6f5ad4d5-9326-45b5-857e-10627d1640f4",
+  "packageName": "com.starlight.macau.flashreport",
+  "developer": {
+    "name": "CEO Office · Starlight Macau IR",
+    "websiteUrl": "https://REPLACE-WITH-YOUR-HOST.example.com",
+    "privacyUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/privacy",
+    "termsOfUseUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/terms"
+  },
+  "name": {
+    "short": "AI Flash Report",
+    "full": "AI Flash Report — CEO Office"
+  },
+  "description": {
+    "short": "AI-enhanced daily executive flash for the integrated resort",
+    "full": "A one-page AI-enhanced executive flash report for the CEO Office of Starlight Macau Integrated Resort. Shows GGR, mass table GGR, VIP rolling volume, non-gaming revenue, hotel occupancy and ADR, plus an AI briefing, anomaly insights and natural-language Q&A. Embeddable as a personal or channel tab in Microsoft Teams."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#1D4ED8",
+  "staticTabs": [
+    {
+      "entityId": "flash-personal",
+      "name": "Flash Report",
+      "contentUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html",
+      "websiteUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html",
+      "scopes": ["personal"]
+    },
+    {
+      "entityId": "flash-channel",
+      "name": "Flash Report",
+      "contentUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html",
+      "websiteUrl": "https://REPLACE-WITH-YOUR-HOST.example.com/index.html",
+      "scopes": ["team", "groupChat"]
+    }
+  ],
+  "permissions": ["identity"],
+  "validDomains": ["REPLACE-WITH-YOUR-HOST.example.com"]
+}
