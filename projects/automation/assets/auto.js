@@ -4,47 +4,63 @@
   /* ---------- Module 1: Evolution stages ---------- */
   var STAGES = {
     1: {
-      kicker: "STAGE 01 · DETERMINISTIC CORE",
-      title: "Core ERP & data pipeline automation",
-      text: "Finance, procurement, warehouse and HCM transactions are automated around a single source of truth. Data-warehouse pipelines enforce master-data consistency and automated ledger posting.",
-      checks: ["Master-data consistency", "Deterministic rules", "Automated ledger posting", "Reconciliation trail"],
+      kicker: "STAGE 01 · CORE ERP & PROTOCOL / BATCH AUTOMATION",
+      title: "Batch uploads and multi-protocol integration",
+      text: "Cross-system integration around core ERP modules — finance, procurement, inventory and HR — using interfaces, message feeds and batch channels. Mass uploads and scripted jobs replaced repetitive manual keying and routine operations.",
+      pain: "Manual, line-by-line keying and file-moving between systems: slow, error-prone and hard to repeat consistently.",
+      checks: ["Interface / protocol mapping", "Batch job scheduling", "Mass-upload validation", "Reconciliation trail"],
       visual: [
-        { title: "Finance · Procurement · WM", small: "Core ERP transactions" },
-        { title: "Data warehouse pipelines", small: "Master-data + ledger feeds" },
-        { title: "Consistency checkpoint", small: "Reconciliation before posting", control: true }
+        { title: "Core ERP modules", small: "Finance · procurement · inventory · HR" },
+        { title: "Multi-protocol interface", small: "API · message · batch channel" },
+        { title: "Mass upload + validation", small: "Replace manual keying", control: true }
       ]
     },
     2: {
-      kicker: "STAGE 02 · CLOUD HUB & COGNITIVE INGESTION",
-      title: "High-throughput cloud integration + cognitive IDP",
-      text: "A bank-grade cloud gateway absorbs omni-channel peaks across web, mobile and enterprise supply-chain workloads. Cognitive document processing extracts structured fields from unstructured paperwork, while ML models support demand and operations forecasting.",
-      checks: ["Idempotency keys", "Gateway availability", "Extraction confidence", "Predictive monitoring"],
+      kicker: "STAGE 02 · WORKFLOW ORCHESTRATION & DOCUMENT INTELLIGENCE",
+      title: "Workflow orchestration and OCR / document intelligence",
+      text: "When processes span roles and departments, workflows chained approvals, routing and exception handling. OCR and document parsing turned invoices, forms and scanned paperwork into structured data that flowed back into business systems.",
+      pain: "Broken hand-offs: someone had to read the document, forward it and re-key its contents into the next system.",
+      checks: ["Approval routing", "Extraction confidence", "Exception handling", "Source-to-record trace"],
       visual: [
-        { title: "Cloud integration gateway", small: "API / EDI · omni-channel peak load" },
-        { title: "Cognitive document processing", small: "Unstructured → structured fields" },
-        { title: "Duplicate-posting guard", small: "Idempotency + reconciliation", control: true }
+        { title: "Workflow orchestration", small: "Approval · routing · exceptions" },
+        { title: "OCR / document parsing", small: "Unstructured → structured fields" },
+        { title: "Confidence checkpoint", small: "Low-score → human review", control: true }
       ]
     },
     3: {
-      kicker: "STAGE 03 · CONTROL AUTOMATION",
-      title: "ML-driven review & compliance workflows",
-      text: "Anomaly detection and pattern analytics are embedded inside approval and periodic-review workflows. High-risk exceptions are flagged automatically, lifting reviewers out of routine checks and strengthening the audit trail.",
-      checks: ["Anomaly detection", "Exception routing", "Human-in-the-loop", "Audit evidence"],
+      kicker: "STAGE 03 · ENTERPRISE INTERNAL PROCESS AUTOMATION",
+      title: "Internal data pipelines and process automation",
+      text: "Inside the enterprise, data pipelines, reporting layers, business systems and automation flows were connected so data moved from capture through cleansing to business triggers in one continuous loop.",
+      pain: "Repeated data hand-offs and reconciliation between internal teams and systems slowed operations and invited inconsistency.",
+      checks: ["Master-data consistency", "Pipeline monitoring", "Automated triggers", "Data-quality gates"],
       visual: [
-        { title: "Business workflow", small: "Approval + periodic review" },
-        { title: "ML anomaly scoring", small: "Risk-ranked exceptions" },
-        { title: "Reviewer checkpoint", small: "Human decision + evidence", control: true }
+        { title: "Data pipeline", small: "Capture · cleanse · move" },
+        { title: "Reporting / analytics", small: "Shared internal view" },
+        { title: "Business trigger", small: "Automated next action", control: true }
       ]
     },
     4: {
-      kicker: "STAGE 04 · GOVERNED AGENTIC WORKFLOWS",
-      title: "Agentic workflows with control-as-code",
-      text: "Document parsing, low-code orchestration and automated guardrails combine into governed agentic workflows. Full-chain observability keeps AI flexibility inside audit-grade determinism.",
-      checks: ["Context ingestion", "Orchestration", "Guardrail tests", "Full-chain trace"],
+      kicker: "STAGE 04 · CLOUD-SCALE MULTI-ENTERPRISE INTEGRATION",
+      title: "Cloud-scale integration across many enterprises",
+      text: "Integration moved to the cloud and became a reusable, high-throughput base serving many enterprises across retail, supply-chain and financial scenarios — linking web, mobile and enterprise backends with reliability and data-compliance in mind.",
+      pain: "One-off internal integration could not support high transaction volumes or multi-party collaboration at scale.",
+      checks: ["High availability", "Idempotency keys", "EOD reconciliation", "Cross-system compliance"],
       visual: [
-        { title: "Document context ingestion", small: "Parsing + structured context" },
-        { title: "Agent orchestration", small: "Low-code workflow steps" },
-        { title: "Guardrails + trace", small: "Block, escalate, record", control: true }
+        { title: "Cloud integration hub", small: "API / EDI · peak transaction load" },
+        { title: "Web · mobile · enterprise", small: "Multi-channel participants" },
+        { title: "Scale + compliance guard", small: "Idempotency · reconciliation", control: true }
+      ]
+    },
+    5: {
+      kicker: "STAGE 05 · GOVERNED AGENTIC AUTOMATION",
+      title: "Agentic automation with governance",
+      text: "On top of integration, workflows and document/knowledge ingestion, AI agents and orchestrated workflows handle context, tool use and multi-step tasks — with permission boundaries, guardrails and audit trails keeping execution governable.",
+      pain: "Rule-based scripts cannot interpret context or handle multi-step work — but more autonomy needs clearer limits and evidence.",
+      checks: ["Permission boundaries", "Guardrail tests", "Human-in-the-loop", "Full-chain audit trail"],
+      visual: [
+        { title: "Context & knowledge ingestion", small: "Documents + enterprise context" },
+        { title: "Agent orchestration", small: "Tool use · multi-step tasks" },
+        { title: "Guardrails + audit", small: "Block · escalate · record", control: true }
       ]
     }
   };
@@ -60,6 +76,7 @@
     document.getElementById("stageKicker").textContent = d.kicker;
     document.getElementById("stageTitle").textContent = d.title;
     document.getElementById("stageText").textContent = d.text;
+    document.getElementById("stagePain").textContent = d.pain;
     document.getElementById("stageChecks").innerHTML = d.checks.map(function (c) {
       return "<span>" + c + "</span>";
     }).join("");

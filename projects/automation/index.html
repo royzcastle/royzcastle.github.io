@@ -26,7 +26,7 @@
         processing and control-embedded agentic workflows — shown as clickable models with synthetic data only.
       </p>
       <div class="hero-metrics">
-        <div><strong>04</strong><span>evolution stages</span></div>
+        <div><strong>05</strong><span>evolution stages</span></div>
         <div><strong>04</strong><span>delivery domains</span></div>
         <div><strong>03</strong><span>control gates</span></div>
         <div><strong>0</strong><span>real client data</span></div>
@@ -47,18 +47,19 @@
       <div class="module-head">
         <span class="mod-num">01</span>
         <div>
-          <span class="mod-kicker">REFERENCE ARCHITECTURE · EVOLUTION</span>
-          <h2>From deterministic pipelines to governed agents</h2>
-          <p>Click each stage to see the architecture pattern and the controls embedded at that layer.</p>
+          <span class="mod-kicker">REFERENCE ARCHITECTURE · FIVE-STAGE EVOLUTION</span>
+          <h2>An automation evolution story, not a collection of buzzwords</h2>
+          <p>From batch uploads and protocol integration to governed agentic workflows — each stage solved a different problem, and each added a new control concern.</p>
         </div>
       </div>
 
       <div class="panel">
         <div class="stage-tabs" role="tablist" aria-label="Evolution stages">
-          <button class="stage-tab is-active" data-stage="1" role="tab" aria-selected="true"><b>01</b> Core ERP</button>
-          <button class="stage-tab" data-stage="2" role="tab" aria-selected="false"><b>02</b> Cloud + IDP</button>
-          <button class="stage-tab" data-stage="3" role="tab" aria-selected="false"><b>03</b> Control automation</button>
-          <button class="stage-tab" data-stage="4" role="tab" aria-selected="false"><b>04</b> Governed agents</button>
+          <button class="stage-tab is-active" data-stage="1" role="tab" aria-selected="true"><b>01</b> Batch &amp; protocols</button>
+          <button class="stage-tab" data-stage="2" role="tab" aria-selected="false"><b>02</b> Workflow &amp; OCR</button>
+          <button class="stage-tab" data-stage="3" role="tab" aria-selected="false"><b>03</b> Internal automation</button>
+          <button class="stage-tab" data-stage="4" role="tab" aria-selected="false"><b>04</b> Cloud-scale</button>
+          <button class="stage-tab" data-stage="5" role="tab" aria-selected="false"><b>05</b> Governed agents</button>
         </div>
 
         <div class="stage-body" id="stageBody" aria-live="polite">
@@ -67,8 +68,12 @@
             <span class="stage-kicker" id="stageKicker"></span>
             <h3 id="stageTitle"></h3>
             <p id="stageText"></p>
+            <div class="stage-pain">
+              <span class="pain-label">PROBLEM IT SOLVED</span>
+              <p id="stagePain"></p>
+            </div>
             <div class="stage-checks">
-              <span class="checks-label">CONTROL CHECKPOINTS</span>
+              <span class="checks-label">RELIABILITY / CONTROL FOCUS</span>
               <div id="stageChecks"></div>
             </div>
           </div>
