@@ -10,7 +10,7 @@
       pain: "Manual, line-by-line keying and file-moving between systems: slow, error-prone and hard to repeat consistently.",
       checks: ["Interface / protocol mapping", "Batch job scheduling", "Mass-upload validation", "Reconciliation trail"],
       visual: [
-        { title: "Core ERP modules", small: "Finance · procurement · HR" },
+        { title: "Core ERP modules", small: "Finance · procurement · WM" },
         { title: "Multi-protocol interface", small: "API · message · batch channel" },
         { title: "Mass upload + validation", small: "Replace manual keying", control: true }
       ]
