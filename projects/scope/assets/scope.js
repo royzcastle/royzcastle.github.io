@@ -189,6 +189,10 @@
       window.location.replace("../iga-pam/index.html");
       return;
     }
+    if (key === "automation-data") {
+      window.location.replace("../automation/index.html");
+      return;
+    }
     if (!PROJECTS[key]) {
       window.location.replace("../../index.html");
       return;

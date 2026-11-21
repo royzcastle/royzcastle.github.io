@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <meta name="description" content="Interactive blueprint for enterprise hyperautomation, cloud integration, cognitive document processing and governed workflows." />
+  <title>Enterprise Hyperautomation &amp; Governed Workflow Blueprint</title>
+  <link rel="stylesheet" href="assets/auto.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="back" href="../../index.html">← Project index</a>
+    <div class="topbar-right">
+      <span class="topbar-tag">INTERACTIVE BLUEPRINT</span>
+      <span class="topbar-entity">FICTIONAL ENTERPRISE GROUP · REFERENCE MODEL</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">ENTERPRISE HYPERAUTOMATION · CONTROL ARCHITECTURE</span>
+      <h1>Automation that scales,<br /><span>controls that hold</span></h1>
+      <p class="lede">
+        A reference architecture spanning core ERP integration, high-throughput cloud hubs, cognitive document
+        processing and control-embedded agentic workflows — shown as clickable models with synthetic data only.
+      </p>
+      <div class="hero-metrics">
+        <div><strong>04</strong><span>evolution stages</span></div>
+        <div><strong>03</strong><span>control gates</span></div>
+        <div><strong>0</strong><span>real client data</span></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="jump" aria-label="Section navigation">
+    <a href="#m1"><b>01</b> Evolution</a>
+    <a href="#m2"><b>02</b> Document → ERP</a>
+    <a href="#m3"><b>03</b> Controls-as-Code</a>
+  </nav>
+
+  <main>
+    <!-- ============ MODULE 1: EVOLUTION ============ -->
+    <section class="module" id="m1">
+      <div class="module-head">
+        <span class="mod-num">01</span>
+        <div>
+          <span class="mod-kicker">REFERENCE ARCHITECTURE · EVOLUTION</span>
+          <h2>From deterministic pipelines to governed agents</h2>
+          <p>Click each stage to see the architecture pattern and the controls embedded at that layer.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="stage-tabs" role="tablist" aria-label="Evolution stages">
+          <button class="stage-tab is-active" data-stage="1" role="tab" aria-selected="true"><b>01</b> Core ERP</button>
+          <button class="stage-tab" data-stage="2" role="tab" aria-selected="false"><b>02</b> Cloud + IDP</button>
+          <button class="stage-tab" data-stage="3" role="tab" aria-selected="false"><b>03</b> Control automation</button>
+          <button class="stage-tab" data-stage="4" role="tab" aria-selected="false"><b>04</b> Governed agents</button>
+        </div>
+
+        <div class="stage-body" id="stageBody" aria-live="polite">
+          <div class="stage-visual" id="stageVisual"></div>
+          <div class="stage-info">
+            <span class="stage-kicker" id="stageKicker"></span>
+            <h3 id="stageTitle"></h3>
+            <p id="stageText"></p>
+            <div class="stage-checks">
+              <span class="checks-label">CONTROL CHECKPOINTS</span>
+              <div id="stageChecks"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MODULE 2: PIPELINE SIMULATOR ============ -->
+    <section class="module" id="m2">
+      <div class="module-head">
+        <span class="mod-num">02</span>
+        <div>
+          <span class="mod-kicker">STATE MACHINE · DOCUMENT TO LEDGER</span>
+          <h2>Ingestion, matching and intelligent routing</h2>
+          <p>Pick an input document and watch it pass through three control gates.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div><h3>Document-to-ERP pipeline</h3><p>Standard structured data, unstructured invoice and an anomalous case.</p></div>
+          <button class="reset" id="pipeReset">Reset</button>
+        </div>
+
+        <div class="input-row" role="group" aria-label="Input document">
+          <button class="input-btn is-active" data-doc="structured"><span>▤</span> Structured B2B message</button>
+          <button class="input-btn" data-doc="invoice"><span>▧</span> Supplier PDF invoice</button>
+          <button class="input-btn" data-doc="anomaly"><span>!</span> Anomalous document</button>
+        </div>
+
+        <div class="gates" id="gates">
+          <div class="gate" data-gate="1">
+            <div class="gate-head"><b>GATE 1</b><span>Cognitive extraction &amp; confidence</span></div>
+            <div class="gate-body" id="gate1">Select an input to begin</div>
+          </div>
+          <div class="gate" data-gate="2">
+            <div class="gate-head"><b>GATE 2</b><span>Three-way match &amp; anomaly detection</span></div>
+            <div class="gate-body" id="gate2">Waiting</div>
+          </div>
+          <div class="gate" data-gate="3">
+            <div class="gate-head"><b>GATE 3</b><span>Intelligent routing</span></div>
+            <div class="gate-body" id="gate3">Waiting</div>
+          </div>
+        </div>
+
+        <div class="route-result" id="routeResult" aria-live="polite">
+          <span class="route-idle">Awaiting input · no transaction processed</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MODULE 3: CONTROLS AS CODE ============ -->
+    <section class="module" id="m3">
+      <div class="module-head">
+        <span class="mod-num">03</span>
+        <div>
+          <span class="mod-kicker">GOVERNANCE · ENGINEERING CHECKLIST</span>
+          <h2>Controls-as-Code checklist</h2>
+          <p>The engineering controls that keep automation auditable — each with its evidence artifact.</p>
+        </div>
+      </div>
+
+      <div class="control-grid" id="controlGrid">
+        <div class="control-card" data-control="0">
+          <span class="ctrl-num">01</span>
+          <h3>Input &amp; privacy</h3>
+          <p>Classification and masking before documents enter OCR or LLM pipelines.</p>
+          <div class="ctrl-evidence"><b>Evidence</b> Classification tag + masking log</div>
+        </div>
+        <div class="control-card" data-control="1">
+          <span class="ctrl-num">02</span>
+          <h3>Idempotency &amp; reconciliation</h3>
+          <p>Idempotency keys and automated end-of-day reconciliation to prevent duplicate postings.</p>
+          <div class="ctrl-evidence"><b>Evidence</b> Key registry + EOD reconciliation report</div>
+        </div>
+        <div class="control-card" data-control="2">
+          <span class="ctrl-num">03</span>
+          <h3>Guardrails &amp; human-in-the-loop</h3>
+          <p>Confidence thresholds; low-confidence or high-risk cases are blocked and routed for approval.</p>
+          <div class="ctrl-evidence"><b>Evidence</b> Threshold config + approval record</div>
+        </div>
+        <div class="control-card" data-control="3">
+          <span class="ctrl-num">04</span>
+          <h3>Observability &amp; audit lineage</h3>
+          <p>Every trigger, model version, rule hit and human override recorded as a traceable lineage.</p>
+          <div class="ctrl-evidence"><b>Evidence</b> Trace log + replayable audit trail</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <details class="legal">
+      <summary>Scope notice</summary>
+      <div class="legal-body">
+        <strong>Confidentiality &amp; Scope Notice:</strong>
+        The enterprise group shown here is fictional. All architectures, figures, workflows and sample outputs in this
+        blueprint are conceptualized reference models using synthetic data, provided for demonstration only. No
+        proprietary designs, source code, internal documents or confidential information of any employer or client are
+        disclosed. Nothing here is financial, investment or legal advice.
+      </div>
+    </details>
+    <a class="foot-link" href="../../index.html">← All projects</a>
+  </footer>
+
+  <script src="assets/auto.js"></script>
+</body>
+</html>
